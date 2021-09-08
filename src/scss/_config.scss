@@ -1,0 +1,26 @@
+// VARIABLES
+$website-width: 1280px;
+$main-color: #2d4059;
+$red-color: #a82c2cd6;
+// $bg-image: url('./assets/images/background-dark.webp') top/100%;
+
+// GENERAL STYLES
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: lightblue;
+	font-family: Montserrat;
+}
