@@ -85,6 +85,15 @@
 		border-width: 2px;
 	}
 
+	&-black {
+		background-color: #000;
+
+		&:hover,
+		&:active {
+			background-color: lighten($color: #000, $amount: 30);
+		}
+	}
+
 	&-add {
 		svg {
 			margin-right: 5px;
