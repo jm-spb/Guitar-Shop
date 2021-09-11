@@ -1,45 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import triangle from '../../assets/icons/triangle.png';
 
-export const SelectBar = ({ items, onClickItem }) => {
-	const [ activeItem, setActiveItem ] = useState(0);
+export const SelectBar = ({ categoriesItems, sortPopupItems }) => {
+	const [ activeCategotyItem, setActiveCategoryItem ] = useState(0);
+	const [ activePopupItem, setActivePopupItem ] = useState(0);
+	const [ visiblePopup, setVisiblePopup ] = useState(false);
 
-	const onSelectItem = (idx) => {
-		setActiveItem(idx);
+	const sortRef = useRef();
+
+	useEffect(() => {
+		document.body.addEventListener('click', hadleOutsideClick);
+	}, []);
+
+	// hide Popup on click outside "select-bar__sort sort"
+	const hadleOutsideClick = (e) => {
+		if (!e.path.includes(sortRef.current)) setVisiblePopup(false);
 	};
 
-	// items && - Если items === null, undefined; сайт не падает с ошибкой, не рендерится только SelectBar.
-	const list =
-		items &&
-		items.map((name, idx) => (
+	// Set "active" className on items both Categories and Popup
+	const onSelectItem = (idx, select) => {
+		select === 'category' ? setActiveCategoryItem(idx) : setActivePopupItem(idx);
+		setVisiblePopup(false);
+	};
+
+	// categoriesItems && - Если categoriesItems === null, undefined; сайт не падает с ошибкой, не рендерится только SelectBar.
+	const categoriesList =
+		categoriesItems &&
+		categoriesItems.map((name, idx) => (
 			<li
 				key={`${name}_${idx}`}
-				className={activeItem === idx ? 'select-bar__categories_active' : ''}
-				onClick={() => onSelectItem(idx)}
+				className={activeCategotyItem === idx ? 'select-bar__categories_active' : ''}
+				onClick={() => onSelectItem(idx, 'category')}
 			>
 				{name}
 			</li>
 		));
 
+	const sortPopupList =
+		sortPopupItems &&
+		sortPopupItems.map((name, idx) => (
+			<li
+				key={`${name}_${idx}`}
+				className={activePopupItem === idx ? 'sort__popup_active' : ''}
+				onClick={() => onSelectItem(idx, 'popup')}
+			>
+				{name}
+			</li>
+		));
+
+	const activeLabel = sortPopupItems[activePopupItem];
+
+	// toggle & filter Popup
+	const togglePopup = () => {
+		setVisiblePopup(!visiblePopup);
+	};
+
 	return (
 		<div className="select-bar">
 			<div className="select-bar__categories">
-				<ul>{list}</ul>
+				<ul>{categoriesList}</ul>
 			</div>
-			<div className="select-bar__sort sort">
+			<div ref={sortRef} className="select-bar__sort sort">
 				<div className="sort__label">
-					<img src={triangle} width={10} height={10} alt="triangle" />
-					<b>Сортировка по:</b>
-					<span>популярности</span>
+					<img
+						className={visiblePopup ? 'rotated' : ''}
+						src={triangle}
+						width={10}
+						height={10}
+						alt="triangle"
+					/>
+					<b>Сортировка&nbsp;по:</b>
+					<span onClick={togglePopup}>{activeLabel}</span>
 				</div>
-				<div className="sort__popup">
-					<ul>
-						<li className="sort__popup_active">популярности</li>
-						<li>цене</li>
-						<li>алфавиту</li>
-					</ul>
-				</div>
+				{visiblePopup && (
+					<div className="sort__popup">
+						<ul>{sortPopupList}</ul>
+					</div>
+				)}
 			</div>
 		</div>
 	);
