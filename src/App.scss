@@ -183,6 +183,10 @@
 				border-radius: 5px;
 				cursor: auto;
 			}
+			&_disabled {
+				opacity: 0.3;
+				pointer-events: none;
+			}
 		}
 
 		&__bottom {

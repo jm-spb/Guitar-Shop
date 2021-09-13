@@ -1,0 +1,114 @@
+{
+  "guitars": [
+    {
+      "id": 100,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1PqZU-N672k1Ky7Rr_oOVSVXUzjQfFCZh",
+      "name": "Edwards",
+      "caseOptions": [0, 1],
+      "price": 50000,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 101,
+      "imageURL": "https://drive.google.com/uc?export=view&id=11OI6XWRm9l9_RD9oCn39OvchrPwWbX2O",
+      "name": "Epiphone",
+      "caseOptions": [0, 1],
+      "price": 30000,
+      "category": 0,
+      "rating": 2
+    },
+    {
+      "id": 102,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1aiEqTbuQfYe4Ep0GJYcuu7Mr9atHNr_d",
+      "name": "Fender",
+      "caseOptions": [0, 1],
+      "price": 70000,
+      "category": 0,
+      "rating": 6
+    },
+    {
+      "id": 103,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1P2XLbdxxOqxy-RNOQDn0uASlEZOd7A9x",
+      "name": "Gibson",
+      "caseOptions": [0, 1],
+      "price": 80000,
+      "category": 0,
+      "rating": 7
+    },
+    {
+      "id": 104,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1G1ejQeePU8FCT16usNm2T0QitdiHruqj",
+      "name": "Jackson",
+      "caseOptions": [0, 1],
+      "price": 90000,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 105,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1QkjTDISApFHtuVVhbnE4JLiYqJigdvHx",
+      "name": "Solar",
+      "caseOptions": [0, 1],
+      "price": 110000,
+      "category": 0,
+      "rating": 3
+    }
+  ],
+  "bass": [
+    {
+      "id": 200,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1mp4tcq3DVSqR0qd0cbIW_JhRrWkeDVjd",
+      "name": "Cort",
+      "caseOptions": [0, 1],
+      "price": 50000,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 201,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1xNVCR5K9CinfQDmFj-OzjepXoLH4jqmo",
+      "name": "Epiphone",
+      "caseOptions": [0, 1],
+      "price": 30000,
+      "category": 0,
+      "rating": 2
+    },
+    {
+      "id": 202,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1tQkvOa2-ZodfHUK-T5N6dCH3MDSjD8-3",
+      "name": "Fender",
+      "caseOptions": [0, 1],
+      "price": 70000,
+      "category": 0,
+      "rating": 6
+    },
+    {
+      "id": 203,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1N8TVojlDweWdCpUmfpolXD8bB5huTkac",
+      "name": "Ibanez",
+      "caseOptions": [0, 1],
+      "price": 80000,
+      "category": 0,
+      "rating": 7
+    },
+    {
+      "id": 204,
+      "imageURL": "https://drive.google.com/uc?export=view&id=13S_Niovro09VA-up8_8Dwnn9XUbdDdBr",
+      "name": "Jackson",
+      "caseOptions": [0, 1],
+      "price": 90000,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 205,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1z_atEp59uNpPWz1IYKcU3ajNq4eFCqvf",
+      "name": "Yamaha",
+      "caseOptions": [0, 1],
+      "price": 110000,
+      "category": 0,
+      "rating": 3
+    }
+  ]
+}
