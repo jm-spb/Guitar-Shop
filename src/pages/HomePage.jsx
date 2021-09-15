@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { SelectBar, ItemCard } from '../components';
+import { ItemCard, SortPopUp } from '../components';
+import { Categories } from '../components';
 
 export const HomePage = () => {
   const { items } = useSelector(({ itemCards, filters }) => {
@@ -20,14 +21,24 @@ export const HomePage = () => {
   return (
     <React.Fragment>
       <div className="index-page__select-bar">
-        <SelectBar
-          categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]}
-          sortPopupItems={[
-            { name: 'популярности', type: 'popular' },
-            { name: 'цене', type: 'price' },
-            { name: 'алфавиту', type: 'alphabet' }
-          ]}
-        />
+        <div className="select-bar">
+          <Categories categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]} />
+          <SortPopUp
+            sortPopupItems={[
+              { name: 'популярности', type: 'popular' },
+              { name: 'цене', type: 'price' },
+              { name: 'алфавиту', type: 'alphabet' }
+            ]}
+          />
+          {/* <SelectBar
+            categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]}
+            sortPopupItems={[
+              { name: 'популярности', type: 'popular' },
+              { name: 'цене', type: 'price' },
+              { name: 'алфавиту', type: 'alphabet' }
+            ]}
+          /> */}
+        </div>
       </div>
 
       <main className="index-page__main main">
