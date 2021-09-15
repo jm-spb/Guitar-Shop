@@ -39,17 +39,17 @@ export const SelectBar = ({ categoriesItems, sortPopupItems }) => {
 
   const sortPopupList =
     sortPopupItems &&
-    sortPopupItems.map((name, idx) => (
+    sortPopupItems.map((obj, idx) => (
       <li
-        key={`${name}_${idx}`}
+        key={`${obj.type}_${idx}`}
         className={activePopupItem === idx ? 'sort__popup_active' : ''}
         onClick={() => onSelectItem(idx, 'popup')}
       >
-        {name}
+        {obj.name}
       </li>
     ));
 
-  const activeLabel = sortPopupItems[activePopupItem];
+  const activeLabel = sortPopupItems[activePopupItem].name;
 
   // toggle & filter Popup
   const togglePopup = () => {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 export const ItemCard = ({ name, imageURL, price, caseOptions }) => {
   const caseOptionsNames = [ 'без кейса', 'с кейсом' ];
@@ -19,15 +20,10 @@ export const ItemCard = ({ name, imageURL, price, caseOptions }) => {
             <li
               key={el}
               onClick={() => onCaseSelect(idx)}
-              className={
-                caseSelection === idx ? (
-                  'item-card__selector_active'
-                ) : !caseOptions.includes(idx) ? (
-                  'item-card__selector_disabled'
-                ) : (
-                  ''
-                )
-              }
+              className={classNames({
+                'item-card__selector_active': caseSelection === idx,
+                'item-card__selector_disabled': !caseOptions.includes(idx)
+              })}
             >
               {el}
             </li>

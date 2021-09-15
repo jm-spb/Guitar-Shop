@@ -1,11 +1,18 @@
 import React from 'react';
-
-// import './App.scss';
+import { useSelector } from 'react-redux';
 
 import { SelectBar, ItemCard } from '../components';
 
-export const HomePage = ({ items }) => {
+export const HomePage = () => {
+  const { items } = useSelector(({ itemCards, filters }) => {
+    return {
+      items: itemCards.items,
+      filters: filters.sortBy
+    };
+  });
+
   let cardsList = [];
+
   for (let item in items) {
     cardsList = cardsList.concat(items[item].map((obj) => <ItemCard key={obj.id} {...obj} />));
   }
@@ -15,7 +22,11 @@ export const HomePage = ({ items }) => {
       <div className="index-page__select-bar">
         <SelectBar
           categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]}
-          sortPopupItems={[ 'популярности', 'цене', 'алфавиту' ]}
+          sortPopupItems={[
+            { name: 'популярности', type: 'popular' },
+            { name: 'цене', type: 'price' },
+            { name: 'алфавиту', type: 'alphabet' }
+          ]}
         />
       </div>
 
