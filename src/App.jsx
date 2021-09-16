@@ -1,26 +1,20 @@
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
 import './App.scss';
 
 import { Header } from './components';
 import { HomePage, CartPage, EmptyCartPage } from './pages';
-import { setItemCards } from './redux/actions/itemCards';
+import { fetchItems } from './redux/actions/itemCards';
 
 export const App = () => {
-  // dispatch в App - запрос выполняется один раз
-  // dispatch в Home - запрос выполняется каждый раз при рендере Home
   const dispatch = useDispatch();
 
   useEffect(
     () => {
-      axios
-        .get(
-          'https://gist.githubusercontent.com/jm-spb/06e13e0d892ebfe70e143ab67c3604f0/raw/ca103408a0f7b1adea900891732b72fc8d191752/guitar-shop.json'
-        )
-        .then(({ data }) => dispatch(setItemCards(data)));
+      // в dispatch прокидывается асинхронный экшн fetchItems, который сначала выполняет запрос, а затем сохраняет результат в store
+      dispatch(fetchItems());
     },
     [ dispatch ]
   );
@@ -38,3 +32,5 @@ export const App = () => {
     </div>
   );
 };
+
+// 'https://localhost:3001/?_order=desc&_sort-price'

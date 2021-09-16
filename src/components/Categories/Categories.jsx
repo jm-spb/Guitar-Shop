@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
-export const Categories = ({ categoriesItems }) => {
+export const Categories = ({ categoriesItems, onClickItem }) => {
   const [ activeCategotyItem, setActiveCategoryItem ] = useState(0);
+
+  const onSelectItem = (idx) => {
+    setActiveCategoryItem(idx);
+    onClickItem(idx);
+  };
 
   // categoriesItems && - Если categoriesItems === null, undefined; сайт не падает с ошибкой, не рендерится только SelectBar.
   const categoriesList =
@@ -10,7 +15,7 @@ export const Categories = ({ categoriesItems }) => {
       <li
         key={`${name}_${idx}`}
         className={activeCategotyItem === idx ? 'select-bar__categories_active' : ''}
-        onClick={() => setActiveCategoryItem(idx)}
+        onClick={() => onSelectItem(idx)}
       >
         {name}
       </li>

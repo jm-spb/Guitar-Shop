@@ -1,28 +1,32 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { ItemCard, SortPopUp } from '../components';
-import { Categories } from '../components';
+import { ItemCard, SortPopUp, Categories } from '../components';
 
 export const HomePage = () => {
-  const { items } = useSelector(({ itemCards, filters }) => {
+  const { items } = useSelector(({ itemCards }) => {
     return {
-      items: itemCards.items,
-      filters: filters.sortBy
+      items: itemCards.items
     };
   });
 
-  let cardsList = [];
+  // если data - это объект (/db)
+  // let cardsList = [];
+  // for (let item in items) {
+  //   cardsList = cardsList.concat(items[item].map((obj) => <ItemCard key={obj.id} {...obj} />));
+  // }
 
-  for (let item in items) {
-    cardsList = cardsList.concat(items[item].map((obj) => <ItemCard key={obj.id} {...obj} />));
-  }
+  // если data  - это массив (/guitars)
+  let cardsList = items.map((item) => <ItemCard key={item.id} {...item} />);
 
   return (
     <React.Fragment>
       <div className="index-page__select-bar">
         <div className="select-bar">
-          <Categories categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]} />
+          <Categories
+            onClickItem={(idx) => console.log(idx)}
+            categoriesItems={[ 'Все', 'Гитары', 'Бас-гитары', 'Усилители', 'Кабинеты', 'Микрофоны' ]}
+          />
           <SortPopUp
             sortPopupItems={[
               { name: 'популярности', type: 'popular' },
