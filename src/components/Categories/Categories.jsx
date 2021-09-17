@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Categories = ({ categoriesItems, onClickItem }) => {
-  const [ activeCategotyItem, setActiveCategoryItem ] = useState('db');
-
-  const onSelectItem = (category) => {
-    setActiveCategoryItem(category);
-    onClickItem(category);
-  };
-
-  // categoriesItems && - Если categoriesItems === null, undefined; сайт не падает с ошибкой, не рендерится только SelectBar.
+export const Categories = ({ activeCategory, categoriesItems, onClickCategory }) => {
   const categoriesList =
     categoriesItems &&
     categoriesItems.map((obj, idx) => (
       <li
         key={`${obj.name}_${idx}`}
-        className={activeCategotyItem === obj.category ? 'select-bar__categories_active' : ''}
-        onClick={() => onSelectItem(obj.category)}
+        className={activeCategory === obj.category ? 'select-bar__categories_active' : ''}
+        onClick={() => onClickCategory(obj.category)}
       >
         {obj.name}
       </li>
@@ -26,4 +19,15 @@ export const Categories = ({ categoriesItems, onClickItem }) => {
       <ul>{categoriesList}</ul>
     </div>
   );
+};
+
+Categories.propTypes = {
+  activeCategory: PropTypes.string.isRequired,
+  categoriesItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClickCategory: PropTypes.func
+};
+
+Categories.defaultProps = {
+  activeCategory: 'db',
+  categoriesItems: []
 };

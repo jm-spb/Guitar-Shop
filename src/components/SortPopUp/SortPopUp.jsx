@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 import triangle from '../../assets/icons/triangle.png';
 
-export const SortPopUp = ({ sortPopupItems }) => {
-  const [ activePopupItem, setActivePopupItem ] = useState(0);
+export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
+  // const [ activePopupItem, setActivePopupItem ] = useState(0);
   const [ visiblePopup, setVisiblePopup ] = useState(false);
 
   const sortRef = useRef();
@@ -17,8 +18,8 @@ export const SortPopUp = ({ sortPopupItems }) => {
     if (!e.path.includes(sortRef.current)) setVisiblePopup(false);
   };
 
-  const onSelectItem = (idx) => {
-    setActivePopupItem(idx);
+  const onSelectItem = (sortType) => {
+    onClickSortType(sortType);
     setVisiblePopup(false);
   };
 
@@ -27,14 +28,14 @@ export const SortPopUp = ({ sortPopupItems }) => {
     sortPopupItems.map((obj, idx) => (
       <li
         key={`${obj.type}_${idx}`}
-        className={activePopupItem === idx ? 'sort__popup_active' : ''}
-        onClick={() => onSelectItem(idx)}
+        className={activeSortType === obj.type ? 'sort__popup_active' : ''}
+        onClick={() => onSelectItem(obj.type)}
       >
         {obj.name}
       </li>
     ));
 
-  const activeLabel = sortPopupItems[activePopupItem].name;
+  const activeLabel = sortPopupItems.find((obj) => obj.type === activeSortType).name;
 
   // toggle & filter Popup
   const togglePopup = () => {
@@ -55,4 +56,12 @@ export const SortPopUp = ({ sortPopupItems }) => {
       )}
     </div>
   );
+};
+
+SortPopUp.propTypes = {
+  sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+
+SortPopUp.defaultProps = {
+  sortPopupItems: []
 };

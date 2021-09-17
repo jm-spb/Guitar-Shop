@@ -1,24 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import './App.scss';
 
 import { Header } from './components';
 import { HomePage, CartPage, EmptyCartPage } from './pages';
-import { fetchItems } from './redux/actions/itemCards';
 
 export const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(
-    () => {
-      // в dispatch прокидывается асинхронный экшн fetchItems, который сначала выполняет запрос, а затем сохраняет результат в store
-      dispatch(fetchItems());
-    },
-    [ dispatch ]
-  );
-
   return (
     <div className="index-page">
       <div className="index-page__content container">
@@ -32,5 +20,3 @@ export const App = () => {
     </div>
   );
 };
-
-// 'https://localhost:3001/?_order=desc&_sort-price'
