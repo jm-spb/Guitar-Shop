@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 
 export const Categories = ({ categoriesItems, onClickItem }) => {
-  const [ activeCategotyItem, setActiveCategoryItem ] = useState(0);
+  const [ activeCategotyItem, setActiveCategoryItem ] = useState('db');
 
-  const onSelectItem = (idx) => {
-    setActiveCategoryItem(idx);
-    onClickItem(idx);
+  const onSelectItem = (category) => {
+    setActiveCategoryItem(category);
+    onClickItem(category);
   };
 
   // categoriesItems && - Если categoriesItems === null, undefined; сайт не падает с ошибкой, не рендерится только SelectBar.
   const categoriesList =
     categoriesItems &&
-    categoriesItems.map((name, idx) => (
+    categoriesItems.map((obj, idx) => (
       <li
-        key={`${name}_${idx}`}
-        className={activeCategotyItem === idx ? 'select-bar__categories_active' : ''}
-        onClick={() => onSelectItem(idx)}
+        key={`${obj.name}_${idx}`}
+        className={activeCategotyItem === obj.category ? 'select-bar__categories_active' : ''}
+        onClick={() => onSelectItem(obj.category)}
       >
-        {name}
+        {obj.name}
       </li>
     ));
 
