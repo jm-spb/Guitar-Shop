@@ -12,7 +12,7 @@ export const HomePage = () => {
       items: itemCards.items
     };
   });
-  const { category, sortBy } = useSelector(({ filters }) => filters);
+  const { category, sortBy, order } = useSelector(({ filters }) => filters);
   const isLoaded = useSelector(({ itemCards }) => itemCards.isLoaded);
 
   // если data - это объект (/db)
@@ -33,17 +33,17 @@ export const HomePage = () => {
     () => {
       // в dispatch прокидывается асинхронный экшн fetchItems, который сначала выполняет запрос, а затем сохраняет результат в store
       // dispatch вызывается каждый раз когда меняем категорию
-      dispatch(fetchItems(category, sortBy));
+      dispatch(fetchItems(category, sortBy, order));
     },
-    [ category, sortBy ]
+    [ category, sortBy, order, dispatch ]
   );
 
   const onSelectCategory = (categoryType) => {
     dispatch(setCategory(categoryType));
   };
 
-  const onSelectSortType = (sortType) => {
-    dispatch(setSortBy(sortType));
+  const onSelectSortType = (sortType, orderType) => {
+    dispatch(setSortBy(sortType, orderType));
   };
 
   return (
@@ -53,7 +53,6 @@ export const HomePage = () => {
           <Categories
             onClickCategory={(categoryType) => onSelectCategory(categoryType)}
             categoriesItems={[
-              { name: 'Все', category: 'db' },
               { name: 'Гитары', category: 'guitars' },
               { name: 'Бас-гитары', category: 'bass' },
               { name: 'Усилители', category: 'amp' },
@@ -64,12 +63,14 @@ export const HomePage = () => {
           />
           <SortPopUp
             sortPopupItems={[
-              { name: 'популярности', type: 'popular' },
-              { name: 'цене', type: 'price' },
-              { name: 'алфавиту', type: 'name' }
+              { name: 'популярности', type: 'rating', order: 'desc' },
+              { name: 'от дешёвых к дорогим', type: 'price', order: 'asc' },
+              { name: 'от дорогих к дешёвым', type: 'price', order: 'desc' },
+              { name: 'алфавиту (A-Z)', type: 'name', order: 'asc' },
+              { name: 'алфавиту (Z-A)', type: 'name', order: 'desc' }
             ]}
-            activeSortType={sortBy}
-            onClickSortType={(sortType) => onSelectSortType(sortType)}
+            activeSortType={{ sortBy, order }}
+            onClickSortType={(sortType, orderType) => onSelectSortType(sortType, orderType)}
           />
         </div>
       </div>

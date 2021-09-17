@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import triangle from '../../assets/icons/triangle.png';
 
 export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
-  // const [ activePopupItem, setActivePopupItem ] = useState(0);
   const [ visiblePopup, setVisiblePopup ] = useState(false);
 
   const sortRef = useRef();
@@ -18,8 +17,8 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
     if (!e.path.includes(sortRef.current)) setVisiblePopup(false);
   };
 
-  const onSelectItem = (sortType) => {
-    onClickSortType(sortType);
+  const onSelectItem = (sortType, order) => {
+    onClickSortType(sortType, order);
     setVisiblePopup(false);
   };
 
@@ -28,14 +27,14 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
     sortPopupItems.map((obj, idx) => (
       <li
         key={`${obj.type}_${idx}`}
-        className={activeSortType === obj.type ? 'sort__popup_active' : ''}
-        onClick={() => onSelectItem(obj.type)}
+        className={activeSortType.sortBy === obj.type && activeSortType.order === obj.order ? 'sort__popup_active' : ''}
+        onClick={() => onSelectItem(obj.type, obj.order)}
       >
         {obj.name}
       </li>
     ));
 
-  const activeLabel = sortPopupItems.find((obj) => obj.type === activeSortType).name;
+  const activeLabel = sortPopupItems.find((obj) => obj.type === activeSortType.sortBy).name;
 
   // toggle & filter Popup
   const togglePopup = () => {
@@ -58,10 +57,15 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
   );
 };
 
+// sortPopupItems, activeSortType, onClickSortType
+
 SortPopUp.propTypes = {
-  sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired
+  sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeSortType: PropTypes.object,
+  onClickSortType: PropTypes.func
 };
 
 SortPopUp.defaultProps = {
-  sortPopupItems: []
+  sortPopupItems: [],
+  activeSortType: {}
 };

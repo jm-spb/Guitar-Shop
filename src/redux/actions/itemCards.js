@@ -4,9 +4,9 @@ import axios from 'axios';
 // fetchItems возвращает другую функцию, которая является асинхронным экшеном.
 //  fetchItems решает, если возвращаемая функция является функцией (как в данном случае), то превратить его в экшн и выполнить. Если возвращаемая функция является простым объектом - выполнить его и пройти дальше
 // Результат работы fetchItems - получение товаров и их сохранение в store
-export const fetchItems = (category, sortBy) => (dispatch) => {
+export const fetchItems = (category, sortBy, order) => (dispatch) => {
   dispatch(setLoaded(false));
-  axios.get(`http://localhost:3002/${category}?_sort=${sortBy}&_order=asc`).then(({ data }) => {
+  axios.get(`http://localhost:3002/${category}?_sort=${sortBy}&_order=${order}`).then(({ data }) => {
     dispatch(setItemCards(data));
   });
 };
