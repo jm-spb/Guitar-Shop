@@ -14,7 +14,9 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
 
   // hide Popup on click outside "select-bar__sort sort"
   const hadleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current)) setVisiblePopup(false);
+    // composedPath - for Firefox
+    const path = e.path || (e.composedPath && e.composedPath());
+    if (!path.includes(sortRef.current)) setVisiblePopup(false);
   };
 
   const onSelectItem = (sortType, order) => {

@@ -3,7 +3,7 @@ const initialState = {
   isLoaded: false
 };
 
-export const itemCardsReducer = (state = initialState, action) => {
+export const itemCards = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_CARDS':
       return {

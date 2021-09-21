@@ -2,32 +2,33 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { ItemCard, SortPopUp, Categories, Loader } from '../components';
+
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchItems } from '../redux/actions/itemCards';
+import { addItemToCart } from '../redux/actions/cart';
 
 export const HomePage = () => {
   const dispatch = useDispatch();
-  const { items } = useSelector(({ itemCards }) => {
-    return {
-      items: itemCards.items
-    };
-  });
-  const { category, sortBy, order } = useSelector(({ filters }) => filters);
-  const isLoaded = useSelector(({ itemCards }) => itemCards.isLoaded);
 
-  // если data - это объект (/db)
-  const itemsAsObject = () => {
-    let cardsList = [];
-    for (let item in items) {
-      cardsList = cardsList.concat(items[item].map((obj) => <ItemCard key={obj.id} {...obj} />));
-    }
-    return cardsList;
+  const { items } = useSelector(({ itemCards }) => itemCards);
+  const { category, sortBy, order } = useSelector(({ filters }) => filters);
+  const { isLoaded } = useSelector(({ itemCards }) => itemCards);
+  const { itemsAdded } = useSelector(({ cart }) => cart);
+
+  const handleAddItem = (obj) => {
+    dispatch(addItemToCart(obj));
   };
 
-  // если data  - это массив (/guitars)
-  const itemsAsArray = () => items && items.map((item) => <ItemCard key={item.id} {...item} />);
-
-  let cardsList = Array.isArray(items) ? itemsAsArray() : itemsAsObject();
+  const cardsList =
+    items &&
+    items.map((item) => (
+      <ItemCard
+        onAddItem={handleAddItem}
+        key={item.id}
+        addedCount={itemsAdded[item.id] && itemsAdded[item.id].length}
+        {...item}
+      />
+    ));
 
   useEffect(
     () => {

@@ -8,31 +8,31 @@ import './Cart.scss';
 
 export const Cart = () => {
   return (
-    <div class="cart cart__page">
-      <div class="cart__top">
-        <h2 class="cart__title">
+    <div className="cart cart__page">
+      <div className="cart__top">
+        <h2 className="cart__title">
           <img src={cart} alt="cart" />Корзина
         </h2>
-        <div class="cart__clear">
+        <div className="cart__clear">
           <img src={trash} alt="trash" />
           <span>Очистить корзину</span>
         </div>
       </div>
-      <div class="cart__content">
-        <div class="item cart__item">
-          <div class="item__img">
+      <div className="cart__content">
+        <div className="item cart__item">
+          <div className="item__img">
             <img
-              class="pizza-block__image"
+              className="pizza-block__image"
               src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
               alt="Pizza"
             />
           </div>
-          <div class="item__info">
+          <div className="item__info">
             <h3>Сырный цыпленок</h3>
             <p>тонкое тесто, 26 см.</p>
           </div>
-          <div class="item__count">
-            <div class="button button-outline button-circle item__count_minus">
+          <div className="item__count">
+            <div className="button button-outline button-circle item__count_minus">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M5.92001 3.84V5.76V8.64C5.92001 9.17016 5.49017 9.6 4.96001 9.6C4.42985 9.6 4.00001 9.17016 4.00001 8.64L4 5.76L4.00001 3.84V0.96C4.00001 0.42984 4.42985 0 4.96001 0C5.49017 0 5.92001 0.42984 5.92001 0.96V3.84Z"
@@ -45,7 +45,7 @@ export const Cart = () => {
               </svg>
             </div>
             <b>2</b>
-            <div class="button button-outline button-circle item__count_plus">
+            <div className="button button-outline button-circle item__count_plus">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M5.92001 3.84V5.76V8.64C5.92001 9.17016 5.49017 9.6 4.96001 9.6C4.42985 9.6 4.00001 9.17016 4.00001 8.64L4 5.76L4.00001 3.84V0.96C4.00001 0.42984 4.42985 0 4.96001 0C5.49017 0 5.92001 0.42984 5.92001 0.96V3.84Z"
@@ -58,11 +58,11 @@ export const Cart = () => {
               </svg>
             </div>
           </div>
-          <div class="item__price">
+          <div className="item__price">
             <b>770 ₽</b>
           </div>
-          <div class="item__remove">
-            <div class="button button-outline button-circle">
+          <div className="item__remove">
+            <div className="button button-outline button-circle">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M5.92001 3.84V5.76V8.64C5.92001 9.17016 5.49017 9.6 4.96001 9.6C4.42985 9.6 4.00001 9.17016 4.00001 8.64L4 5.76L4.00001 3.84V0.96C4.00001 0.42984 4.42985 0 4.96001 0C5.49017 0 5.92001 0.42984 5.92001 0.96V3.84Z"
@@ -77,8 +77,8 @@ export const Cart = () => {
           </div>
         </div>
       </div>
-      <div class="cart__bottom bottom">
-        <div class="bottom__details">
+      <div className="cart__bottom bottom">
+        <div className="bottom__details">
           <span>
             Всего пицц: <b>3 шт.</b>
           </span>
@@ -86,9 +86,9 @@ export const Cart = () => {
             Сумма заказа: <b>900 ₽</b>
           </span>
         </div>
-        <div class="bottom__buttons">
+        <div className="bottom__buttons">
           <Link to="/">
-            <button class="button button-outline button-add go-back-btn">
+            <button className="button button-outline button-add go-back-btn">
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M7 13L1 6.93015L6.86175 1"
@@ -103,7 +103,7 @@ export const Cart = () => {
             </button>
           </Link>
 
-          <div class="button pay-btn">
+          <div className="button pay-btn">
             <span>Оплатить сейчас</span>
           </div>
         </div>

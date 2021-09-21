@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { filtersReducer } from './filters';
-import { itemCardsReducer } from './itemCards';
+import { cart } from './cart';
+import { filters } from './filters';
+import { itemCards } from './itemCards';
 
 export const rootReducer = combineReducers({
-  filters: filtersReducer,
-  itemCards: itemCardsReducer
+  filters,
+  itemCards,
+  cart
 });
