@@ -8,6 +8,7 @@ export const cart = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_ITEM_CART': {
       // в newItem содержится актуальное значение добавленных объектов. Object.keys(newItem).length - получаем актуальное количество ключей
+      // Immer library - вместо тернарника
       const newItem = {
         ...state.itemsAdded,
         [action.payload.id]: !state.itemsAdded[action.payload.id]

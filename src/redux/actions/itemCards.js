@@ -6,7 +6,7 @@ import axios from 'axios';
 // Результат работы fetchItems - получение товаров и их сохранение в store
 export const fetchItems = (category, sortBy, order) => (dispatch) => {
   dispatch(setLoaded(false));
-  axios.get(`http://localhost:3002/${category}?_sort=${sortBy}&_order=${order}`).then(({ data }) => {
+  axios.get(`/${category}?_sort=${sortBy}&_order=${order}`).then(({ data }) => {
     dispatch(setItemCards(data));
   });
 };

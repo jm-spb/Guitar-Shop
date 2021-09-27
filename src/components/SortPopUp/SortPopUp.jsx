@@ -59,8 +59,6 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
   );
 };
 
-// sortPopupItems, activeSortType, onClickSortType
-
 SortPopUp.propTypes = {
   sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   activeSortType: PropTypes.object,
