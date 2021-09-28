@@ -25,7 +25,7 @@ export const HomePage = () => {
       <ItemCard
         onAddItem={handleAddItem}
         key={item.id}
-        addedCount={itemsAdded[item.id] && itemsAdded[item.id].length}
+        addedCount={itemsAdded[item.id] && itemsAdded[item.id].items.length}
         {...item}
       />
     ));

@@ -7,7 +7,7 @@ import emptyCard from '../../assets/img/empty_cart.webp';
 
 export const EmptyCart = () => {
   return (
-    <div class="cart cart__empty">
+    <div className="cart cart__empty">
       <h2>Корзина пустая</h2>
       <p>
         Вероятней всего, вы ещё не выбрали ни одного товара.<br />
@@ -15,7 +15,7 @@ export const EmptyCart = () => {
       </p>
       <img src={emptyCard} alt="Empty cart" />
       <Link to="/">
-        <button class="button button-black">
+        <button className="button button-black">
           <span>Вернуться назад</span>
         </button>
       </Link>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export const ItemCard = ({ id, name, imageURL, price, caseOptions, onAddItem, addedCount }) => {
-  console.log(addedCount);
   const caseOptionsNames = [ 'без кейса', 'с кейсом' ];
   const [ caseSelection, setCaseSelection ] = useState(caseOptions[0]);
 
