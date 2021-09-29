@@ -4,18 +4,26 @@
 
   &__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   &__logo {
-    display: flex;
-    align-items: center;
+    display: block;
   }
   &__title {
-    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
     h1 {
       letter-spacing: 5px;
+      margin-left: 15px;
+      font-size: 40px;
     }
+  }
+
+  &__discription {
+    font-size: 20px;
   }
 }
 

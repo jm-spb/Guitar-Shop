@@ -17,12 +17,12 @@ export const Header = () => {
       <div className="header__container">
         <Link to="/">
           <div className="header__logo">
-            <div>
-              <img src={logo} width={40} height={40} alt="logo" />
-            </div>
             <div className="header__title">
+              <img src={logo} width={40} height={40} alt="logo" />
               <h1>GUITAR SHOP</h1>
-              <p>Продажа гитар и музыкального оборудования</p>
+            </div>
+            <div className="header__discription">
+              <i>Продажа гитар и музыкального оборудования</i>
             </div>
           </div>
         </Link>

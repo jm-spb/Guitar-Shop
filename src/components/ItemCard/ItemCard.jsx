@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import './ItemCard.scss';
+
 export const ItemCard = ({ id, name, imageURL, price, caseOptions, onAddItem, addedCount }) => {
   const caseOptionsNames = [ 'без кейса', 'с кейсом' ];
   const [ caseSelection, setCaseSelection ] = useState(caseOptions[0]);
@@ -23,7 +25,10 @@ export const ItemCard = ({ id, name, imageURL, price, caseOptions, onAddItem, ad
 
   return (
     <div className="main__item-card item-card">
-      <img className="item-card__image" width={100} height={250} src={imageURL} alt={name} />
+      <div className="item-card__image">
+        <img src={imageURL} alt={name} />
+      </div>
+
       <h4 className="item-card__title">{name}</h4>
       <div className="item-card__selector">
         <ul>

@@ -2,7 +2,6 @@
 $website-width: 1080px;
 $main-color: #2d4059;
 $red-color: #a82c2c;
-// $bg-image: url('./assets/images/background-dark.webp') top/100%;
 
 // GENERAL STYLES
 * {
@@ -24,6 +23,6 @@ a {
 }
 
 body {
-  background-color: lightblue;
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(28, 42, 57, 1) 50%, rgba(99, 99, 99, 1) 100%);
   font-family: Montserrat;
 }

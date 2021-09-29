@@ -28,7 +28,7 @@ export const CartItem = ({
   return (
     <div className="item cart__item">
       <div className="item__img">
-        <img src={imageURL} width={40} alt={name} />
+        <img src={imageURL} height={100} alt={name} />
       </div>
       <div className="item__info">
         <h3>{name}</h3>
