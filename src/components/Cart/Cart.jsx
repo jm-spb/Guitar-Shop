@@ -2,15 +2,16 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import './Cart.scss';
+
 import { CartItem } from './CartItem';
 import { EmptyCart } from '../EmptyCart/EmptyCart';
 
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/actions/cart';
 
-import './Cart.scss';
-
 import cart from '../../assets/icons/cart.png';
 import trash from '../../assets/icons/trash.png';
+import go_back from '../../assets/icons/go_back.png';
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -46,10 +47,10 @@ export const Cart = () => {
         <div className="cart cart__page">
           <div className="cart__top">
             <h2 className="cart__title">
-              <img src={cart} alt="cart" />Корзина
+              <img src={cart} width={40} height={40} alt="cart" />Корзина
             </h2>
             <div className="cart__clear" onClick={onClearCart}>
-              <img src={trash} alt="trash" />
+              <img src={trash} width={25} height={25} alt="trash" />
               <span>Очистить корзину</span>
             </div>
           </div>
@@ -71,7 +72,7 @@ export const Cart = () => {
           <div className="cart__bottom bottom">
             <div className="bottom__details">
               <span>
-                Всего пицц: <b>{totalCount} шт.</b>
+                Всего товаров: <b>{totalCount} шт.</b>
               </span>
               <span>
                 Сумма заказа: <b>{totalPrice} ₽</b>
@@ -79,22 +80,14 @@ export const Cart = () => {
             </div>
             <div className="bottom__buttons">
               <Link to="/">
-                <button className="button button-outline button-add go-back-btn">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 13L1 6.93015L6.86175 1"
-                      stroke="#D3D3D3"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                <button className="button button-outline button-go-back">
+                  <img src={go_back} width={20} height={20} alt="go back" />
 
                   <span>Вернуться назад</span>
                 </button>
               </Link>
 
-              <button className="button pay-btn" onClick={onClickOrder}>
+              <button className="button button-pay" onClick={onClickOrder}>
                 <span>Оплатить сейчас</span>
               </button>
             </div>

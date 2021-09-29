@@ -1,3 +1,5 @@
+import { ADD_ITEM_CART, CLEAR_CART, MINUS_CART_ITEM, PLUS_CART_ITEM, REMOVE_CART_ITEM } from '../actionTypes';
+
 const initialState = {
   itemsAdded: {},
   totalPrice: 0,
@@ -27,7 +29,7 @@ const getTotalCount = (obj) => {
 
 export const cart = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_ITEM_CART': {
+    case ADD_ITEM_CART: {
       /* в currentItems содержится актуальное значение добавленных объектов.
       1) проверь объект itemsAdded по ключу action.payload.id.
       2) если такого ключа нет, то запиши в массив currentItems объект из action.payload. 
@@ -55,7 +57,7 @@ export const cart = (state = initialState, action) => {
       };
     }
 
-    case 'REMOVE_CART_ITEM': {
+    case REMOVE_CART_ITEM: {
       const newItems = JSON.parse(JSON.stringify(state.itemsAdded));
       const totalPrice = state.totalPrice - newItems[action.payload].totalItemPrice;
       const totalCount = state.totalCount - newItems[action.payload].items.length;
@@ -69,7 +71,7 @@ export const cart = (state = initialState, action) => {
       };
     }
 
-    case 'PLUS_CART_ITEM': {
+    case PLUS_CART_ITEM: {
       const newObjItems = [ ...state.itemsAdded[action.payload].items, state.itemsAdded[action.payload].items[0] ];
 
       const newItems = {
@@ -87,7 +89,7 @@ export const cart = (state = initialState, action) => {
       };
     }
 
-    case 'MINUS_CART_ITEM': {
+    case MINUS_CART_ITEM: {
       const oldItems = state.itemsAdded[action.payload].items;
       const newObjItems = oldItems.length > 1 ? oldItems.slice(1) : oldItems;
 
@@ -106,7 +108,7 @@ export const cart = (state = initialState, action) => {
       };
     }
 
-    case 'CLEAR_CART':
+    case CLEAR_CART:
       return {
         itemsAdded: {},
         totalPrice: 0,

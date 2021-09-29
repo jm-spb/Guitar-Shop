@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ItemCard, SortPopUp, Categories, Loader } from '../components';
+import './HomePage.scss';
+
+import { ItemCard } from '../components/ItemCard/ItemCard';
+import { SortPopUp } from '../components/SortPopUp/SortPopUp';
+import { Categories } from '../components/Categories/Categories';
+import { Loader } from '../components/ItemCard/Loader';
 
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchItems } from '../redux/actions/itemCards';

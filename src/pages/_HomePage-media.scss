@@ -1,0 +1,16 @@
+@media (max-width: 1060px) {
+  .select-bar {
+    display: block;
+
+    &__categories {
+      margin-bottom: 20px;
+    }
+
+    .sort {
+      &__popup {
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+}

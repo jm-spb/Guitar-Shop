@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import './Header.scss';
+
 import logo from '../../assets/icons/GS logo.png';
 import cart from '../../assets/icons/cart.png';
 
@@ -15,7 +17,9 @@ export const Header = () => {
       <div className="header__container">
         <Link to="/">
           <div className="header__logo">
-            <img src={logo} width={40} height={40} alt="logo" />
+            <div>
+              <img src={logo} width={40} height={40} alt="logo" />
+            </div>
             <div className="header__title">
               <h1>GUITAR SHOP</h1>
               <p>Продажа гитар и музыкального оборудования</p>

@@ -1,0 +1,22 @@
+.header {
+  border-bottom: 1px solid gray;
+  padding: 20px 0 40px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin-left: 15px;
+    h1 {
+      letter-spacing: 5px;
+    }
+  }
+}
+
+@import 'Header-media';

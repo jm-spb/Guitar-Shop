@@ -1,0 +1,12 @@
+@media (max-width: 500px) {
+  .header {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__logo {
+      margin-bottom: 40px;
+    }
+  }
+}

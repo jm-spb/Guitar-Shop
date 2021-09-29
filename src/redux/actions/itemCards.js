@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { SET_CARDS, SET_LOADED } from '../actionTypes';
 // Проблема: вынести get-запрос из App.jsx в отдельный экшн. useDispatch использовать внутри экшена нельзя, только внутри компонента. Также dispatch нужно выполнить только после выполнения get-запроса
 // Решение: использовать middleware - redux-thunk.
 // fetchItems возвращает другую функцию, которая является асинхронным экшеном.
@@ -12,11 +13,11 @@ export const fetchItems = (category, sortBy, order) => (dispatch) => {
 };
 
 export const setItemCards = (items) => ({
-  type: 'SET_CARDS',
+  type: SET_CARDS,
   payload: items
 });
 
 export const setLoaded = (payload) => ({
-  type: 'SET_LOADED',
+  type: SET_LOADED,
   payload
 });
