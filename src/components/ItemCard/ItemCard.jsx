@@ -31,7 +31,7 @@ export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCo
       <div className="item-card__rating">
         {[ ...Array(10) ].map((_, i) => {
           const ratingValue = i + 1;
-          return <FaStar key={i + ratingValue} size={15} color={ratingValue <= rating ? 'ffc107' : ''} />;
+          return <FaStar key={i + ratingValue} size={15} color={ratingValue <= rating ? '#ffc107' : ''} />;
         })}
       </div>
 
