@@ -36,7 +36,9 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
       </li>
     ));
 
-  const activeLabel = sortPopupItems.find((obj) => obj.type === activeSortType.sortBy).name;
+  const activeLabel = sortPopupItems.find(
+    (obj) => obj.type === activeSortType.sortBy && obj.order === activeSortType.order
+  ).name;
 
   // toggle & filter Popup
   const togglePopup = () => {
@@ -47,7 +49,6 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
     <div ref={sortRef} className="select-bar__sort sort">
       <div className="sort__label">
         <FaCaretUp className={visiblePopup ? 'sort__caret-up sort__caret-up_rotated' : 'sort__caret-up'} size={15} />
-        {/* <img className={visiblePopup ? 'rotated' : ''} src={triangle} width={10} height={10} alt="triangle" /> */}
         <b>Сортировка&nbsp;по:</b>
         <span onClick={togglePopup}>{activeLabel}</span>
       </div>

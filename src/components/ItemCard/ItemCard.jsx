@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { priceDelimeter } from '../../priceDelimeter';
+
 import { FaStar } from 'react-icons/fa';
 
 import './ItemCard.scss';
@@ -22,18 +24,19 @@ export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCo
         <img src={imageURL} alt={name} />
       </div>
 
-      <h4 className="item-card__title">{name}</h4>
+      <div className="item-card__title">
+        <h4>{name}</h4>
+      </div>
+
       <div className="item-card__rating">
         {[ ...Array(10) ].map((_, i) => {
           const ratingValue = i + 1;
-          return (
-            <FaStar key={i + ratingValue} className="star" size={15} color={ratingValue <= rating ? 'ffc107' : ''} />
-          );
+          return <FaStar key={i + ratingValue} size={15} color={ratingValue <= rating ? 'ffc107' : ''} />;
         })}
       </div>
 
       <div className="item-card__bottom">
-        <div className="item-card__price">{`${price} ₽`}</div>
+        <div className="item-card__price">{`${priceDelimeter(price)} ₽`}</div>
         <button onClick={handleAddItem} className="button button-outline button-add">
           <span>Добавить</span>
           {addedCount && <i>{addedCount}</i>}

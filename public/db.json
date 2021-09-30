@@ -3,43 +3,43 @@
     {
       "id": 100,
       "imageURL": "https://drive.google.com/uc?export=view&id=13DqDW1RueaeqKtDYGlQHP4dyERk2-BH7",
-      "name": "Edwards",     
-      "price": 50000,      
+      "name": "Edwards E-LP-125SD/QM Black Cherry",     
+      "price": 49990,      
       "rating": 7
     },
     {
       "id": 101,
       "imageURL": "https://drive.google.com/uc?export=view&id=1h-eT9Df_m_VU0iAz4cjXSnfSCW_zwkcp",
       "name": "EPIPHONE Les Paul Special VE",     
-      "price": 30000,      
+      "price": 23400,      
       "rating": 3
     },
     {
       "id": 102,
       "imageURL": "https://drive.google.com/uc?export=view&id=1IocymPXqrTUTKAMrnyAHASgXELhRMu_T",
-      "name": "Fender",     
-      "price": 70000,      
+      "name": "Frnder Deluxe Strat HSS MN TBS",     
+      "price": 108000,      
       "rating": 7
     },
     {
       "id": 103,
       "imageURL": "https://drive.google.com/uc?export=view&id=188R-Lf8YslPwX3K7-WdE5G9DOvE3ouSY",
-      "name": "Gibson",     
-      "price": 80000,      
+      "name": "Gibson SG Tribute Vintage Cherry Satin",     
+      "price": 108000,      
       "rating": 8
     },
     {
       "id": 104,
       "imageURL": "https://drive.google.com/uc?export=view&id=1G36_hih8ykcHSzjVPM2E_sNKj5dgQG3a",
-      "name": "Jackson",     
-      "price": 90000,      
+      "name": "Jackson Japan King V",     
+      "price": 85700,      
       "rating": 6
     },
     {
       "id": 105,
       "imageURL": "https://drive.google.com/uc?export=view&id=1PuRymElLAwne_qqiOImVf_wVXJXm_bgI",
-      "name": "Solar",     
-      "price": 110000,      
+      "name": "Solar S1.6FRBLB",     
+      "price": 106990,      
       "rating": 9
     }
   ],
@@ -47,44 +47,221 @@
     {
       "id": 200,
       "imageURL": "https://drive.google.com/uc?export=view&id=1mp4tcq3DVSqR0qd0cbIW_JhRrWkeDVjd",
-      "name": "Cort",     
-      "price": 50000,      
+      "name": "Cort A6-Plus-FMMH-OPN Artisan Series",     
+      "price": 64610,      
       "rating": 4
     },
     {
       "id": 201,
       "imageURL": "https://drive.google.com/uc?export=view&id=1xNVCR5K9CinfQDmFj-OzjepXoLH4jqmo",
-      "name": "Epiphone",     
-      "price": 30000,      
+      "name": "Epiphone Thunderbird IV Bass Reverse",     
+      "price": 49000,      
       "rating": 2
     },
     {
       "id": 202,
       "imageURL": "https://drive.google.com/uc?export=view&id=1tQkvOa2-ZodfHUK-T5N6dCH3MDSjD8-3",
-      "name": "Fender",     
-      "price": 70000,      
+      "name": "Fender SQUIER Classic Vibe 70s JAZZ BASS",     
+      "price": 46000,      
       "rating": 8
     },
     {
       "id": 203,
       "imageURL": "https://drive.google.com/uc?export=view&id=1N8TVojlDweWdCpUmfpolXD8bB5huTkac",
-      "name": "Ibanez",     
-      "price": 80000,      
+      "name": "Ibanez SR400EQM-SKG",     
+      "price": 48000,      
       "rating": 7
     },
     {
       "id": 204,
       "imageURL": "https://drive.google.com/uc?export=view&id=13S_Niovro09VA-up8_8Dwnn9XUbdDdBr",
-      "name": "Jackson",     
-      "price": 90000,      
+      "name": "Jackson JS3Q SPECTRA V",     
+      "price": 61000,      
       "rating": 8
     },
     {
       "id": 205,
       "imageURL": "https://drive.google.com/uc?export=view&id=1z_atEp59uNpPWz1IYKcU3ajNq4eFCqvf",
-      "name": "Yamaha",     
-      "price": 110000,      
+      "name": "Yamaha BB235 YELLOW NATURAL SATIN",     
+      "price": 43990,      
       "rating": 7
+    }
+  ],
+  "amp" : [
+    {
+      "id": 300,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1-YT2d7pMwB1qiNpnoZAoCphkKvllot-t",
+      "name": "MARSHALL JCM900 4100",     
+      "price": 181000,      
+      "rating": 9
+    },
+    {
+      "id": 301,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1qmYj9jM0c8NkJ7QHp7zbL2EmsAA-IGyT",
+      "name": "BOSS WAZA AMP HEAD",     
+      "price": 265490,      
+      "rating": 7
+    },
+    {
+      "id": 302,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1qsRcQdMmk4Yl0qT1YaZY_ZmBOJvi9PjX",
+      "name": "MESA BOOGIE RECTO-VERB",     
+      "price": 161000,      
+      "rating": 7
+    },
+    {
+      "id": 303,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1841WvI6cSO_wN84FhyJdJMLkW9yOY2uq",
+      "name": "MARSHALL JVM 205H 50 WATT",     
+      "price": 147000,      
+      "rating": 7
+    },
+    {
+      "id": 304,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1GL9gdxUJ8_03WOi2dQlB9iJwtpgGJRi3",
+      "name": "FENDER 57` DELUXE",     
+      "price": 214000,      
+      "rating": 5
+    },
+    {
+      "id": 305,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1bbDMEsN48RPW0T1u7fxqOkZk3Aa1GIAQ",
+      "name": "EVH 5150 III 50W 6L6 BLACK 230",     
+      "price": 146000,      
+      "rating": 6
+    }
+  ],
+  "cabinet" : [
+    {
+      "id": 400,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1VeCNR61kNtDYF-h75o2GFOMfe9_z7yWJ",
+      "name": "MARSHALL 1960BHW 120W 4X12 BASE CABINET",     
+      "price": 127000,      
+      "rating": 7
+    },
+    {
+      "id": 401,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1a2MYO6Z_f4QNh18yrzvHI4IqwHKp_PQF",
+      "name": "EVH 5150III® 4x12 Straight Cabinet",     
+      "price": 121000,      
+      "rating": 5
+    },
+    {
+      "id": 402,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1PbuZXfIKwhd_DNQw61utYIlGELwcqRZb",
+      "name": "FENDER Super-Sonic 60 212 Enclosure Blonde",     
+      "price": 107000,      
+      "rating": 6
+    },
+    {
+      "id": 403,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1Gk1GKxK1jqHI3sSYBtOOLTATm-xho7Wm",
+      "name": "YAMAHA THRC112",     
+      "price": 25990,      
+      "rating": 8
+    },
+    {
+      "id": 404,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1K7DkPbP9RZB1SSljJxfDQ6liIx7PKVYR",
+      "name": "HEADRUSH FRFR112",     
+      "price": 39000,      
+      "rating": 6
+    },
+    {
+      "id": 405,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1QYGQGK0dLwIx_Uauvs9raR9x3ISrYL_V",
+      "name": "VOX BC108",     
+      "price": 9500,      
+      "rating": 4
+    }
+  ],
+  "mics" : [
+    {
+      "id": 501,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1Oen0LAV9h7Sx7QQR7VbRAC1S86ymPX1Z",
+      "name": "Beyerdynamic M 88 TG",     
+      "price": 47130,      
+      "rating": 6
+    },
+    {
+      "id": 502,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1l4PgyvX_iOsEJpCVfSMzot5VbR8a_ztV",
+      "name": "SHURE Super 55 Deluxe",     
+      "price": 23100,      
+      "rating": 8
+    },
+    {
+      "id": 503,
+      "imageURL": "https://drive.google.com/uc?export=view&id=14AyQglNie-SAiLxYgcemaYmaePq50fm7",
+      "name": "Audio-technica AE4100",     
+      "price": 19758,      
+      "rating": 5
+    },
+    {
+      "id": 504,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1b2WNcC9v3-96Sw9ChjxKgA0UUqk1FEgu",
+      "name": "Superlux PRAC5",     
+      "price": 11050,      
+      "rating": 5
+    },
+    {
+      "id": 505,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1vbej494_evsSgX_oe6NBoh7M7M8FjJgt",
+      "name": "SENNHEISER E 845",     
+      "price": 10630,      
+      "rating": 7
+    },
+    {
+      "id": 506,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1Oan9FbwuPsmm-luambyfcsfFrAxhycrt",
+      "name": "AKG P5i",     
+      "price": 9100,      
+      "rating": 4
+    }
+  ],
+
+  "headphones" : [
+    {
+      "id": 600,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1MUdrApZSGyV6fxkvdMK6H8chBwN6YDOK",
+      "name": "Beyerdynamic DT 770 PRO",     
+      "price": 19000,      
+      "rating": 9
+    },
+    {
+      "id": 601,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1Rnlva7iVf5mO8NxcOoMaR_jyOEidlZKL",
+      "name": "AKG K712PRO",     
+      "price": 22090,      
+      "rating": 8
+    },
+    {
+      "id": 602,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1tW1JztlecsUXGLgdDsZ9fqaP664rBEyk",
+      "name": "FOSTEX T60RP",     
+      "price": 25990,      
+      "rating": 6
+    },
+    {
+      "id": 603,
+      "imageURL": "https://drive.google.com/uc?export=view&id=180dpN4mm6J83wkIHl6dRE1kTYg_b8BkW",
+      "name": "AUDIO-TECHNICA ATH-AD900X",     
+      "price": 26990,      
+      "rating": 7
+    },
+    {
+      "id": 604,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1W8PqsyvcMJos9hWviVB6zdVkzZPKAIPH",
+      "name": "SHURE SRH1540",     
+      "price": 31300,      
+      "rating": 6
+    },
+    {
+      "id": 605,
+      "imageURL": "https://drive.google.com/uc?export=view&id=1jiWPoyl_HzWAP6A0vzQw7p111Y35gRMs",
+      "name": "Beyerdynamic DT 1770 PRO 250 ohms",     
+      "price": 61300,      
+      "rating": 8
     }
   ]
 }

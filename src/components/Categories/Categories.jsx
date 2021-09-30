@@ -28,6 +28,6 @@ Categories.propTypes = {
 };
 
 Categories.defaultProps = {
-  activeCategory: 'db',
+  activeCategory: 'guitars',
   categoriesItems: []
 };

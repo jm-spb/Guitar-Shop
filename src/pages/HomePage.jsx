@@ -62,7 +62,8 @@ export const HomePage = () => {
               { name: 'Бас-гитары', category: 'bass' },
               { name: 'Усилители', category: 'amp' },
               { name: 'Кабинеты', category: 'cabinet' },
-              { name: 'Микрофоны', category: 'mics' }
+              { name: 'Микрофоны', category: 'mics' },
+              { name: 'Наушники', category: 'headphones' }
             ]}
             activeCategory={category}
           />

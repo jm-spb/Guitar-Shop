@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { priceDelimeter } from '../../priceDelimeter';
+
 import { FaMinus } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 
@@ -43,7 +45,7 @@ export const CartItem = ({
         </button>
       </div>
       <div className="item__price">
-        <b>{totalItemPrice} ₽</b>
+        <b>{priceDelimeter(totalItemPrice)} ₽</b>
       </div>
       <div className="item__remove">
         <button className="button button-outline button-circle" onClick={handleRemoveClick}>
