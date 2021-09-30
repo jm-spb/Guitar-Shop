@@ -41,15 +41,6 @@
       display: flex;
       align-items: center;
 
-      img {
-        margin-right: 8px;
-        transform: rotate(180deg);
-
-        &.rotated {
-          transform: none;
-        }
-      }
-
       b {
         margin-right: 8px;
       }
@@ -58,6 +49,14 @@
         color: $red-color;
         border-bottom: 1px dashed $red-color;
         cursor: pointer;
+      }
+    }
+
+    &__caret-up {
+      margin-right: 5px;
+
+      &_rotated {
+        transform: rotate(180deg);
       }
     }
 

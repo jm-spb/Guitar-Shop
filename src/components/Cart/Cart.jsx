@@ -9,9 +9,9 @@ import { EmptyCart } from '../EmptyCart/EmptyCart';
 
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/actions/cart';
 
-import cart from '../../assets/icons/cart.png';
-import trash from '../../assets/icons/trash.png';
-import go_back from '../../assets/icons/go_back.png';
+import { FaCartArrowDown } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -46,11 +46,11 @@ export const Cart = () => {
       {totalCount ? (
         <div className="cart cart__page">
           <div className="cart__top">
-            <h2 className="cart__title">
-              <img src={cart} width={40} height={40} alt="cart" />Корзина
-            </h2>
+            <div className="cart__title">
+              <FaCartArrowDown className="cart__icon" size={30} /> <h2>Корзина</h2>
+            </div>
             <div className="cart__clear" onClick={onClearCart}>
-              <img src={trash} width={25} height={25} alt="trash" />
+              <FaTrashAlt className="cart__clear-icon" size={30} />
               <span>Очистить корзину</span>
             </div>
           </div>
@@ -81,8 +81,7 @@ export const Cart = () => {
             <div className="bottom__buttons">
               <Link to="/">
                 <button className="button button-outline button-go-back">
-                  <img src={go_back} width={20} height={20} alt="go back" />
-
+                  <FaArrowLeft className="button-go-back-icon" size={20} />
                   <span>Вернуться назад</span>
                 </button>
               </Link>

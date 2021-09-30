@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+
+import { FaStar } from 'react-icons/fa';
 
 import './ItemCard.scss';
 
-export const ItemCard = ({ id, name, imageURL, price, caseOptions, onAddItem, addedCount }) => {
-  const caseOptionsNames = [ 'без кейса', 'с кейсом' ];
-  const [ caseSelection, setCaseSelection ] = useState(caseOptions[0]);
-
-  const onCaseSelect = (idx) => {
-    setCaseSelection(idx);
-  };
-
+export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCount }) => {
   const handleAddItem = () => {
     const obj = {
       id,
       name,
       imageURL,
-      price,
-      caseOption: caseOptionsNames[caseSelection]
+      price
     };
     onAddItem(obj);
   };
@@ -30,22 +23,15 @@ export const ItemCard = ({ id, name, imageURL, price, caseOptions, onAddItem, ad
       </div>
 
       <h4 className="item-card__title">{name}</h4>
-      <div className="item-card__selector">
-        <ul>
-          {caseOptionsNames.map((el, idx) => (
-            <li
-              key={el}
-              onClick={() => onCaseSelect(idx)}
-              className={classNames({
-                'item-card__selector_active': caseSelection === idx,
-                'item-card__selector_disabled': !caseOptions.includes(idx)
-              })}
-            >
-              {el}
-            </li>
-          ))}
-        </ul>
+      <div className="item-card__rating">
+        {[ ...Array(10) ].map((_, i) => {
+          const ratingValue = i + 1;
+          return (
+            <FaStar key={i + ratingValue} className="star" size={15} color={ratingValue <= rating ? 'ffc107' : ''} />
+          );
+        })}
       </div>
+
       <div className="item-card__bottom">
         <div className="item-card__price">{`${price} ₽`}</div>
         <button onClick={handleAddItem} className="button button-outline button-add">
@@ -61,7 +47,7 @@ ItemCard.propTypes = {
   name: PropTypes.string,
   imageURL: PropTypes.string.isRequired,
   price: PropTypes.number,
-  caseOptions: PropTypes.arrayOf(PropTypes.number),
+  rating: PropTypes.number,
   onAddItem: PropTypes.func,
   addedCount: PropTypes.number
 };
@@ -69,5 +55,5 @@ ItemCard.propTypes = {
 ItemCard.defaultProps = {
   name: 'Наименование товара',
   price: 0,
-  caseOptions: []
+  rating: 0
 };

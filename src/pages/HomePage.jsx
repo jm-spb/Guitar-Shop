@@ -15,9 +15,8 @@ import { addItemToCart } from '../redux/actions/cart';
 export const HomePage = () => {
   const dispatch = useDispatch();
 
-  const { items } = useSelector(({ itemCards }) => itemCards);
+  const { items, isLoaded } = useSelector(({ itemCards }) => itemCards);
   const { category, sortBy, order } = useSelector(({ filters }) => filters);
-  const { isLoaded } = useSelector(({ itemCards }) => itemCards);
   const { itemsAdded } = useSelector(({ cart }) => cart);
 
   const handleAddItem = (obj) => {
@@ -69,7 +68,7 @@ export const HomePage = () => {
           />
           <SortPopUp
             sortPopupItems={[
-              { name: 'популярности', type: 'rating', order: 'desc' },
+              { name: 'рейтингу', type: 'rating', order: 'desc' },
               { name: 'от дешёвых к дорогим', type: 'price', order: 'asc' },
               { name: 'от дорогих к дешёвым', type: 'price', order: 'desc' },
               { name: 'алфавиту (A-Z)', type: 'name', order: 'asc' },

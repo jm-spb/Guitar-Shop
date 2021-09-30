@@ -17,11 +17,11 @@
   &__title {
     display: flex;
     align-items: center;
-    font-size: 26px;
+    font-size: 18px;
+  }
 
-    img {
-      margin-right: 10px;
-    }
+  &__icon {
+    margin-right: 10px;
   }
 
   &__clear {
@@ -29,26 +29,24 @@
     align-items: center;
     cursor: pointer;
 
+    &:hover {
+      .cart__clear-icon,
+      span {
+        color: darken($color: #b6b6b6, $amount: 50);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    &-icon {
+      color: #b6b6b6;
+      transition: all 0.2s ease-in-out;
+    }
+
     span {
       margin-left: 7px;
       color: #b6b6b6;
       font-size: 18px;
-      transition: all 0.015s ease-in-out;
-    }
-
-    img {
-      filter: invert(83%) sepia(3%) saturate(12%) hue-rotate(320deg) brightness(88%) contrast(91%);
-    }
-
-    &:hover {
-      span {
-        color: darken($color: #b6b6b6, $amount: 50);
-        transition: all 0.1s ease-in-out;
-      }
-      img {
-        filter: invert(0);
-        transition: all 0.1s ease-in-out;
-      }
+      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -114,21 +112,16 @@
       width: 4%;
 
       .button {
+        color: darken($color: gray, $amount: 10);
         border-color: darken($color: gray, $amount: 10);
+        transform: rotate(45deg);
+
         &:hover,
         &:active {
           border-color: darken($color: gray, $amount: 80);
           background-color: darken($color: gray, $amount: 80);
-
-          img {
-            filter: invert(100%);
-          }
+          color: #fff;
         }
-      }
-
-      img {
-        filter: invert(41%) sepia(0%) saturate(0%) hue-rotate(35deg) brightness(97%) contrast(92%);
-        transform: rotate(45deg);
       }
     }
   }

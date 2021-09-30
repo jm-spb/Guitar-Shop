@@ -1,7 +1,7 @@
 import React from 'react';
 
-import minus from '../../assets/icons/minus.svg';
-import plus from '../../assets/icons/plus.svg';
+import { FaMinus } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
 
 export const CartItem = ({
   id,
@@ -35,11 +35,11 @@ export const CartItem = ({
       </div>
       <div className="item__count">
         <button className="button button-outline button-circle item__count_minus" onClick={handleMinusItem}>
-          <img src={minus} width={10} height={10} alt="minus" />
+          <FaMinus />
         </button>
         <b>{totalItemCount}</b>
         <button className="button button-outline button-circle item__count_plus" onClick={handlePlusItem}>
-          <img src={plus} width={10} height={10} alt="plus" />
+          <FaPlus />
         </button>
       </div>
       <div className="item__price">
@@ -47,7 +47,7 @@ export const CartItem = ({
       </div>
       <div className="item__remove">
         <button className="button button-outline button-circle" onClick={handleRemoveClick}>
-          <img src={plus} width={10} height={10} alt="plus" />
+          <FaPlus />
         </button>
       </div>
     </div>

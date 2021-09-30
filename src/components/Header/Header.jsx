@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FaCartArrowDown } from 'react-icons/fa';
 
 import './Header.scss';
 
 import logo from '../../assets/icons/GS logo.png';
-import cart from '../../assets/icons/cart.png';
 
 export const Header = () => {
   const { totalPrice, totalCount } = useSelector(({ cart }) => ({
@@ -32,7 +32,7 @@ export const Header = () => {
             <button className="button button-cart">
               <span>{totalPrice} ₽</span>
               <div className="button__delimiter" />
-              <img src={cart} alt="cart" />
+              <FaCartArrowDown className="cart-icon" size={25} />
               <span>{totalCount}</span>
             </button>
           </Link>

@@ -3,112 +3,88 @@
     {
       "id": 100,
       "imageURL": "https://drive.google.com/uc?export=view&id=13DqDW1RueaeqKtDYGlQHP4dyERk2-BH7",
-      "name": "Edwards",
-      "caseOptions": [0, 1],
-      "price": 50000,
-      "category": 0,
-      "rating": 4
+      "name": "Edwards",     
+      "price": 50000,      
+      "rating": 7
     },
     {
       "id": 101,
       "imageURL": "https://drive.google.com/uc?export=view&id=1h-eT9Df_m_VU0iAz4cjXSnfSCW_zwkcp",
-      "name": "EPIPHONE Les Paul Special VE",
-      "caseOptions": [0, 1],
-      "price": 30000,
-      "category": 0,
-      "rating": 2
+      "name": "EPIPHONE Les Paul Special VE",     
+      "price": 30000,      
+      "rating": 3
     },
     {
       "id": 102,
       "imageURL": "https://drive.google.com/uc?export=view&id=1IocymPXqrTUTKAMrnyAHASgXELhRMu_T",
-      "name": "Fender",
-      "caseOptions": [0, 1],
-      "price": 70000,
-      "category": 0,
-      "rating": 6
+      "name": "Fender",     
+      "price": 70000,      
+      "rating": 7
     },
     {
       "id": 103,
       "imageURL": "https://drive.google.com/uc?export=view&id=188R-Lf8YslPwX3K7-WdE5G9DOvE3ouSY",
-      "name": "Gibson",
-      "caseOptions": [0, 1],
-      "price": 80000,
-      "category": 0,
-      "rating": 7
+      "name": "Gibson",     
+      "price": 80000,      
+      "rating": 8
     },
     {
       "id": 104,
       "imageURL": "https://drive.google.com/uc?export=view&id=1G36_hih8ykcHSzjVPM2E_sNKj5dgQG3a",
-      "name": "Jackson",
-      "caseOptions": [0, 1],
-      "price": 90000,
-      "category": 0,
-      "rating": 5
+      "name": "Jackson",     
+      "price": 90000,      
+      "rating": 6
     },
     {
       "id": 105,
       "imageURL": "https://drive.google.com/uc?export=view&id=1PuRymElLAwne_qqiOImVf_wVXJXm_bgI",
-      "name": "Solar",
-      "caseOptions": [0, 1],
-      "price": 110000,
-      "category": 0,
-      "rating": 3
+      "name": "Solar",     
+      "price": 110000,      
+      "rating": 9
     }
   ],
   "bass": [
     {
       "id": 200,
       "imageURL": "https://drive.google.com/uc?export=view&id=1mp4tcq3DVSqR0qd0cbIW_JhRrWkeDVjd",
-      "name": "Cort",
-      "caseOptions": [0, 1],
-      "price": 50000,
-      "category": 0,
+      "name": "Cort",     
+      "price": 50000,      
       "rating": 4
     },
     {
       "id": 201,
       "imageURL": "https://drive.google.com/uc?export=view&id=1xNVCR5K9CinfQDmFj-OzjepXoLH4jqmo",
-      "name": "Epiphone",
-      "caseOptions": [0, 1],
-      "price": 30000,
-      "category": 0,
+      "name": "Epiphone",     
+      "price": 30000,      
       "rating": 2
     },
     {
       "id": 202,
       "imageURL": "https://drive.google.com/uc?export=view&id=1tQkvOa2-ZodfHUK-T5N6dCH3MDSjD8-3",
-      "name": "Fender",
-      "caseOptions": [0, 1],
-      "price": 70000,
-      "category": 0,
-      "rating": 6
+      "name": "Fender",     
+      "price": 70000,      
+      "rating": 8
     },
     {
       "id": 203,
       "imageURL": "https://drive.google.com/uc?export=view&id=1N8TVojlDweWdCpUmfpolXD8bB5huTkac",
-      "name": "Ibanez",
-      "caseOptions": [0, 1],
-      "price": 80000,
-      "category": 0,
+      "name": "Ibanez",     
+      "price": 80000,      
       "rating": 7
     },
     {
       "id": 204,
       "imageURL": "https://drive.google.com/uc?export=view&id=13S_Niovro09VA-up8_8Dwnn9XUbdDdBr",
-      "name": "Jackson",
-      "caseOptions": [0, 1],
-      "price": 90000,
-      "category": 0,
-      "rating": 5
+      "name": "Jackson",     
+      "price": 90000,      
+      "rating": 8
     },
     {
       "id": 205,
       "imageURL": "https://drive.google.com/uc?export=view&id=1z_atEp59uNpPWz1IYKcU3ajNq4eFCqvf",
-      "name": "Yamaha",
-      "caseOptions": [0, 1],
-      "price": 110000,
-      "category": 0,
-      "rating": 3
+      "name": "Yamaha",     
+      "price": 110000,      
+      "rating": 7
     }
   ]
 }

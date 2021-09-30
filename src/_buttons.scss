@@ -24,9 +24,9 @@
     align-items: center;
     padding: 5px 12px;
 
-    img {
+    .cart-icon {
       margin-right: 8px;
-      margin-bottom: 1px;
+      color: #fff;
     }
 
     span {
@@ -52,15 +52,7 @@
       color: $red-color;
     }
 
-    img {
-      filter: invert(19%) sepia(52%) saturate(3213%) hue-rotate(342deg) brightness(94%) contrast(87%);
-    }
-
     &:hover {
-      img {
-        filter: invert(100%);
-      }
-
       &,
       span {
         color: #fff;
@@ -164,6 +156,11 @@
     padding: 10px 0;
     border-color: #000;
 
+    &-icon {
+      margin-right: 12px;
+      color: #000;
+    }
+
     span {
       color: #000;
       font-size: 16px;
@@ -173,14 +170,10 @@
     &:hover {
       background-color: #000;
 
+      .button-go-back-icon,
       span {
         color: #fff;
       }
-    }
-
-    img {
-      margin-right: 12px;
-      filter: invert(0);
     }
   }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import triangle from '../../assets/icons/triangle.png';
+import { FaCaretUp } from 'react-icons/fa';
 
 export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
   const [ visiblePopup, setVisiblePopup ] = useState(false);
@@ -46,7 +46,8 @@ export const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) =
   return (
     <div ref={sortRef} className="select-bar__sort sort">
       <div className="sort__label">
-        <img className={visiblePopup ? 'rotated' : ''} src={triangle} width={10} height={10} alt="triangle" />
+        <FaCaretUp className={visiblePopup ? 'sort__caret-up sort__caret-up_rotated' : 'sort__caret-up'} size={15} />
+        {/* <img className={visiblePopup ? 'rotated' : ''} src={triangle} width={10} height={10} alt="triangle" /> */}
         <b>Сортировка&nbsp;по:</b>
         <span onClick={togglePopup}>{activeLabel}</span>
       </div>
