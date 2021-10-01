@@ -8,7 +8,7 @@ import { FaPlus } from 'react-icons/fa';
 export const CartItem = ({
   id,
   name,
-  imageURL,
+  imageCartURL,
   totalItemPrice,
   totalItemCount,
   onClickRemoveItem,
@@ -30,7 +30,7 @@ export const CartItem = ({
   return (
     <div className="item cart__item">
       <div className="item__img">
-        <img src={imageURL} height={100} alt={name} />
+        <img src={imageCartURL} alt={name} />
       </div>
       <div className="item__info">
         <h3>{name}</h3>

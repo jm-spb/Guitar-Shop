@@ -24,7 +24,7 @@
     border-radius: 5px;
     padding: 20px;
     background-color: #fff;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   &__header {
@@ -51,6 +51,8 @@
 
     p {
       margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.7;
     }
   }
 

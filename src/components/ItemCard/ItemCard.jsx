@@ -7,12 +7,23 @@ import { FaStar } from 'react-icons/fa';
 
 import './ItemCard.scss';
 
-export const ItemCard = ({ id, name, discription, imageURL, price, rating, onAddItem, addedCount, setActive }) => {
+export const ItemCard = ({
+  id,
+  name,
+  discription,
+  imageURL,
+  imageCartURL,
+  price,
+  rating,
+  onAddItem,
+  addedCount,
+  setActive
+}) => {
   const handleAddItem = () => {
     const obj = {
       id,
       name,
-      imageURL,
+      imageCartURL,
       price
     };
     onAddItem(obj);

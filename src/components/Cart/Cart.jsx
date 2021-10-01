@@ -60,7 +60,7 @@ export const Cart = () => {
                 key={obj.id}
                 id={obj.id}
                 name={obj.name}
-                imageURL={obj.imageURL}
+                imageCartURL={obj.imageCartURL}
                 totalItemPrice={itemsAdded[obj.id].totalItemPrice}
                 totalItemCount={itemsAdded[obj.id].items.length}
                 onClickRemoveItem={onRemoveItem}
