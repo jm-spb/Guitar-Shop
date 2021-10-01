@@ -3,42 +3,48 @@
     {
       "id": 100,
       "imageURL": "https://drive.google.com/uc?export=view&id=13DqDW1RueaeqKtDYGlQHP4dyERk2-BH7",
-      "name": "Edwards E-LP-125SD/QM Black Cherry",     
+      "name": "Edwards E-LP-125SD/QM Black Cherry",
+      "discription": "Edwards Edwards Edwards Edwards Edwards Edwards Edwards Edwards Edwards ",     
       "price": 49990,      
       "rating": 7
     },
     {
       "id": 101,
       "imageURL": "https://drive.google.com/uc?export=view&id=1h-eT9Df_m_VU0iAz4cjXSnfSCW_zwkcp",
-      "name": "EPIPHONE Les Paul Special VE",     
+      "name": "EPIPHONE Les Paul Special VE",
+      "discription": "EPIPHONE EPIPHONE EPIPHONE EPIPHONE EPIPHONE EPIPHONE EPIPHONE EPIPHONE ",     
       "price": 23400,      
       "rating": 3
     },
     {
       "id": 102,
       "imageURL": "https://drive.google.com/uc?export=view&id=1IocymPXqrTUTKAMrnyAHASgXELhRMu_T",
-      "name": "Frnder Deluxe Strat HSS MN TBS",     
+      "name": "Fender Deluxe Strat HSS MN TBS",
+      "discription": "Fender Fender Fender Fender Fender Fender Fender Fender Fender Fender ",     
       "price": 108000,      
       "rating": 7
     },
     {
       "id": 103,
       "imageURL": "https://drive.google.com/uc?export=view&id=188R-Lf8YslPwX3K7-WdE5G9DOvE3ouSY",
-      "name": "Gibson SG Tribute Vintage Cherry Satin",     
+      "name": "Gibson SG Tribute Vintage Cherry Satin",
+      "discription": "Gibson Gibson Gibson Gibson Gibson Gibson Gibson Gibson Gibson Gibson ",     
       "price": 108000,      
       "rating": 8
     },
     {
       "id": 104,
       "imageURL": "https://drive.google.com/uc?export=view&id=1G36_hih8ykcHSzjVPM2E_sNKj5dgQG3a",
-      "name": "Jackson Japan King V",     
+      "name": "Jackson Japan King V",
+      "discription": "Jackson Jackson Jackson Jackson Jackson Jackson Jackson Jackson Jackson Jackson ",     
       "price": 85700,      
       "rating": 6
     },
     {
       "id": 105,
       "imageURL": "https://drive.google.com/uc?export=view&id=1PuRymElLAwne_qqiOImVf_wVXJXm_bgI",
-      "name": "Solar S1.6FRBLB",     
+      "name": "Solar S1.6FRBLB",
+      "discription": "Гитары линейки S1 имеют выдающийся дизайн и функциональность, это безапелляционно сегмент премиум как для рока, так и для метала. Эта гитара Type S1.6FR воплотила в себе все достижения сегодняшнего искусства производства гитар. На гитаре установлен надежнейший Floyd Rose 1000 из усиленной стали и увеличенного латунного киля. Звукосниматели Duncan Solar дают полный спектр тональных красок, от органически чистого до современного мощного перегруза - все при отличном сустейне и максимальной стабильности строя. Гитара Type S1.6FR имеет сквозное крепление грифа, мензуру 25.5”, корпус из махагони с топом из тополя, быстрый тонкий удобный гриф из клена с накладкой из черного дерева с 24 ладами и фосфорецирующие маркеры на ребре грифа. На грифе установлены локовые колки Grover 18:1, топ локи и пятипозиционный переключатель.",     
       "price": 106990,      
       "rating": 9
     }

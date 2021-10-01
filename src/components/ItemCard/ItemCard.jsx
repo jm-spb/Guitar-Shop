@@ -7,7 +7,7 @@ import { FaStar } from 'react-icons/fa';
 
 import './ItemCard.scss';
 
-export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCount }) => {
+export const ItemCard = ({ id, name, discription, imageURL, price, rating, onAddItem, addedCount, setActive }) => {
   const handleAddItem = () => {
     const obj = {
       id,
@@ -16,6 +16,16 @@ export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCo
       price
     };
     onAddItem(obj);
+  };
+
+  const handleModalOn = () => {
+    setActive({ scrollY: window.scrollY, show: true, name, discription, imageURL, price });
+
+    // block body scroll on modal open
+    document.body.setAttribute(
+      'style',
+      `position: fixed; top: -${window.scrollY}px; left: 0; right: 0; background-color: rgba(28, 42, 57, 1);`
+    );
   };
 
   return (
@@ -33,6 +43,12 @@ export const ItemCard = ({ id, name, imageURL, price, rating, onAddItem, addedCo
           const ratingValue = i + 1;
           return <FaStar key={i + ratingValue} size={15} color={ratingValue <= rating ? '#ffc107' : ''} />;
         })}
+      </div>
+
+      <div className="item-card__modal">
+        <button className="button button-modal" onClick={handleModalOn}>
+          <span>Описание</span>
+        </button>
       </div>
 
       <div className="item-card__bottom">

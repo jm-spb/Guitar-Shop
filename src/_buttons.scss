@@ -4,7 +4,6 @@
   display: inline-block;
   background-color: $red-color;
   border-radius: 5px;
-  min-width: 130px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -88,6 +87,7 @@
 
   &-add {
     height: 40px;
+    padding: 0 10px;
     position: relative;
 
     span {
@@ -185,6 +185,26 @@
 
     &:hover {
       background-color: darken($red-color, 8%);
+    }
+  }
+
+  &-modal {
+    background-color: #fff;
+    border-color: rgba(28, 42, 57, 1);
+    padding: 5px;
+
+    span {
+      color: rgba(28, 42, 57, 1);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(28, 42, 57, 1);
+
+      span {
+        color: #fff;
+      }
     }
   }
 }
