@@ -66,7 +66,6 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    min-width: 32px;
     padding: 0;
     border-width: 2px;
     border-radius: 20px;
@@ -182,6 +181,7 @@
     font-size: 16px;
     font-weight: 600;
     width: 210px;
+    padding: 10px 0;
 
     &:hover {
       background-color: darken($red-color, 8%);
@@ -208,3 +208,5 @@
     }
   }
 }
+
+@import 'buttons-media';

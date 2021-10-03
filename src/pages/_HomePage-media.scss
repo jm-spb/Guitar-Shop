@@ -1,0 +1,24 @@
+@media (max-width: 600px) {
+  .select-bar {
+    &__categories {
+      ul {
+        li {
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .select-bar {
+    font-size: 12px;
+    &__categories {
+      ul {
+        li {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}

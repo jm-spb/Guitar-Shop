@@ -7,6 +7,8 @@ import './Cart.scss';
 import { CartItem } from './CartItem';
 import { EmptyCart } from '../EmptyCart/EmptyCart';
 
+import { priceDelimeter } from '../../priceDelimeter';
+
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/actions/cart';
 
 import { FaCartArrowDown } from 'react-icons/fa';
@@ -75,7 +77,7 @@ export const Cart = () => {
                 Всего товаров: <b>{totalCount} шт.</b>
               </span>
               <span>
-                Сумма заказа: <b>{totalPrice} ₽</b>
+                Сумма заказа: <b>{priceDelimeter(totalPrice)} ₽</b>
               </span>
             </div>
             <div className="bottom__buttons">
@@ -87,7 +89,7 @@ export const Cart = () => {
               </Link>
 
               <button className="button button-pay" onClick={onClickOrder}>
-                <span>Оплатить сейчас</span>
+                <span>Перейти к оплате</span>
               </button>
             </div>
           </div>

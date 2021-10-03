@@ -32,25 +32,32 @@ export const CartItem = ({
       <div className="item__img">
         <img src={imageCartURL} alt={name} />
       </div>
-      <div className="item__info">
-        <h3>{name}</h3>
-      </div>
-      <div className="item__count">
-        <button className="button button-outline button-circle item__count_minus" onClick={handleMinusItem}>
-          <FaMinus />
-        </button>
-        <b>{totalItemCount}</b>
-        <button className="button button-outline button-circle item__count_plus" onClick={handlePlusItem}>
-          <FaPlus />
-        </button>
-      </div>
-      <div className="item__price">
-        <b>{priceDelimeter(totalItemPrice)} ₽</b>
-      </div>
-      <div className="item__remove">
-        <button className="button button-outline button-circle" onClick={handleRemoveClick}>
-          <FaPlus />
-        </button>
+      <div className="item__content">
+        <div className="item__info">
+          <h3>{name}</h3>
+        </div>
+
+        <div className="item__wrapper">
+          <div className="item__count">
+            <button className="button button-outline button-circle " onClick={handleMinusItem}>
+              <FaMinus className="item__count-minus" />
+            </button>
+            <b>{totalItemCount}</b>
+            <button className="button button-outline button-circle " onClick={handlePlusItem}>
+              <FaPlus className="item__count-plus" />
+            </button>
+          </div>
+
+          <div className="item__price">
+            <b>{priceDelimeter(totalItemPrice)} ₽</b>
+
+            <div className="item__remove">
+              <button className="button button-outline button-circle" onClick={handleRemoveClick}>
+                <FaPlus className="item__count-plus" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

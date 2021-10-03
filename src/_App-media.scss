@@ -1,0 +1,21 @@
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .index-page {
+    &__select-bar {
+      margin-top: 30px;
+    }
+
+    &__main {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 10px;
+  }
+}
