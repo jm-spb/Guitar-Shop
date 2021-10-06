@@ -72,9 +72,14 @@
 
       ul {
         overflow: hidden;
+
         li {
           padding: 12px 20px;
           cursor: pointer;
+
+          button {
+            text-align: start;
+          }
 
           &:hover {
             background: rgba(254, 95, 30, 0.05);

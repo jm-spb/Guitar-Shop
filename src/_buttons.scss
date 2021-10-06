@@ -109,6 +109,7 @@
     }
 
     &:hover {
+      border: none;
       &:before {
         transform: scaleX(1);
       }

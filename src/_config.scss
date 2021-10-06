@@ -22,6 +22,15 @@ a {
   }
 }
 
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 body {
   background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(28, 42, 57, 1) 50%, rgba(99, 99, 99, 1) 100%);
   font-family: Montserrat;

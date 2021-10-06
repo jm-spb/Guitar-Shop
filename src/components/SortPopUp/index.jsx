@@ -70,7 +70,7 @@ const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
 
 SortPopUp.propTypes = {
   sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-  activeSortType: PropTypes.shape.isRequired,
+  activeSortType: PropTypes.objectOf(PropTypes.string).isRequired,
   onClickSortType: PropTypes.func
 };
 

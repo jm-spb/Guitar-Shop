@@ -15,7 +15,7 @@ const Modal = ({ scrollY, active, setActive, imageURL, name, discription, price 
   };
   return (
     <div
-      className={active.show ? 'modal modal_active' : 'modal'}
+      className={active ? 'modal modal_active' : 'modal'}
       onClick={handleModalOff}
       onKeyDown={handleModalOff}
       role="button"
@@ -55,16 +55,23 @@ const Modal = ({ scrollY, active, setActive, imageURL, name, discription, price 
 };
 
 Modal.propTypes = {
-  scrollY: PropTypes.number.isRequired,
-  active: PropTypes.shape.isRequired,
-  name: PropTypes.string.isRequired,
-  discription: PropTypes.string.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  scrollY: PropTypes.number,
+  active: PropTypes.bool,
+  name: PropTypes.string,
+  discription: PropTypes.string,
+  imageURL: PropTypes.string,
+  price: PropTypes.number,
   setActive: PropTypes.func
 };
 
 Modal.defaultProps = {
+  scrollY: 0,
+  active: false,
+  name: '',
+  discription: '',
+  imageURL: '',
+  price: 0,
+
   setActive: () => {}
 };
 

@@ -66,7 +66,7 @@ const ItemCard = ({
         <div className="item-card__price">{`${priceDelimeter(price)} ₽`}</div>
         <button onClick={handleAddItem} className="button button-outline button-add" type="button">
           <span>Добавить</span>
-          {addedCount && <i>{addedCount}</i>}
+          {addedCount !== 0 ? <i>{addedCount}</i> : ''}
         </button>
       </div>
     </div>
@@ -81,12 +81,13 @@ ItemCard.propTypes = {
   imageCartURL: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
-  addedCount: PropTypes.number.isRequired,
+  addedCount: PropTypes.number,
   onAddItem: PropTypes.func,
   setActive: PropTypes.func
 };
 
 ItemCard.defaultProps = {
+  addedCount: 0,
   onAddItem: () => {},
   setActive: () => {}
 };

@@ -36,7 +36,7 @@ const cart = (state = initialState, action) => {
       3) если такой ключ есть, скопируй все существующие объекты из массива items и добавь новый объект из action.payload
       4) Массив currentItems будет в качестве ключа передан в items
       */
-      // Immer library - вместо тернарника
+
       const currentItems = !state.itemsAdded[action.payload.id]
         ? [ action.payload ]
         : [ ...state.itemsAdded[action.payload.id].items, action.payload ];

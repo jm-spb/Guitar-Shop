@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EmptyCart from '../components/EmptyCart/EmptyCart';
+import EmptyCart from '../components/EmptyCart';
 
 const EmptyCartPage = () => <EmptyCart />;
 

@@ -3,15 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './HomePage.scss';
 
-import ItemCard from '../components/ItemCard/ItemCard';
-import SortPopUp from '../components/SortPopUp/SortPopUp';
-import Categories from '../components/Categories/Categories';
+import ItemCard from '../components/ItemCard';
+import SortPopUp from '../components/SortPopUp';
+import Categories from '../components/Categories';
 import Loader from '../components/ItemCard/Loader';
-import Modal from '../components/Modal/Modal';
+import Modal from '../components/Modal';
 
 import { setCategory, setSortBy } from '../redux/actions/filters';
-import { fetchItems } from '../redux/actions/itemCards';
 import { addItemToCart } from '../redux/actions/cart';
+
+import fetchItems from '../api/fetchItems';
 
 const HomePage = () => {
   const [ modalActive, setModalActive ] = useState({
@@ -105,7 +106,7 @@ const HomePage = () => {
 
         <Modal
           scrollY={modalActive.scrollY}
-          active={modalActive}
+          active={modalActive.show}
           setActive={setModalActive}
           imageURL={modalActive.imageURL}
           name={modalActive.name}

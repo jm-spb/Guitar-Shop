@@ -7,7 +7,7 @@ import './Cart.scss';
 import { FaCartArrowDown, FaTrashAlt, FaArrowLeft } from 'react-icons/fa';
 
 import CartItem from './CartItem';
-import EmptyCart from '../EmptyCart/EmptyCart';
+import EmptyCart from '../EmptyCart';
 
 import priceDelimeter from '../../priceDelimeter';
 
