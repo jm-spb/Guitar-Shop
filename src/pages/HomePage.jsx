@@ -3,17 +3,17 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './HomePage.scss';
 
-import { ItemCard } from '../components/ItemCard/ItemCard';
-import { SortPopUp } from '../components/SortPopUp/SortPopUp';
-import { Categories } from '../components/Categories/Categories';
-import { Loader } from '../components/ItemCard/Loader';
-import { Modal } from '../components/Modal/Modal';
+import ItemCard from '../components/ItemCard/ItemCard';
+import SortPopUp from '../components/SortPopUp/SortPopUp';
+import Categories from '../components/Categories/Categories';
+import Loader from '../components/ItemCard/Loader';
+import Modal from '../components/Modal/Modal';
 
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchItems } from '../redux/actions/itemCards';
 import { addItemToCart } from '../redux/actions/cart';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [ modalActive, setModalActive ] = useState({
     scrollY: 0,
     show: false,
@@ -37,21 +37,25 @@ export const HomePage = () => {
     items &&
     items.map((item) => (
       <ItemCard
-        onAddItem={handleAddItem}
         key={item.id}
+        id={item.id}
+        name={item.name}
+        discription={item.discription}
+        imageURL={item.imageURL}
+        imageCartURL={item.imageCartURL}
+        price={item.price}
+        rating={item.rating}
+        onAddItem={handleAddItem}
         addedCount={itemsAdded[item.id] && itemsAdded[item.id].items.length}
         setActive={setModalActive}
-        {...item}
       />
     ));
 
   useEffect(
     () => {
-      // в dispatch прокидывается асинхронный экшн fetchItems, который сначала выполняет запрос, а затем сохраняет результат в store
-      // dispatch вызывается каждый раз когда меняем категорию
       dispatch(fetchItems(category, sortBy, order));
     },
-    [ category, sortBy, order, dispatch ]
+    [ category, sortBy, order ]
   );
 
   const onSelectCategory = (categoryType) => {
@@ -96,7 +100,7 @@ export const HomePage = () => {
         <h2>Все товары</h2>
 
         <div className="main__content">
-          {isLoaded ? cardsList : Array(8).fill(0).map((_, idx) => <Loader key={idx} />)}
+          {isLoaded ? cardsList : Array(8).fill(0).map(() => <Loader key={Math.random()} />)}
         </div>
 
         <Modal
@@ -112,3 +116,5 @@ export const HomePage = () => {
     </React.Fragment>
   );
 };
+
+export default HomePage;

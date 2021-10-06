@@ -5,11 +5,11 @@ import { FaCartArrowDown } from 'react-icons/fa';
 
 import './Header.scss';
 
-import { priceDelimeter } from '../../priceDelimeter';
+import priceDelimeter from '../../priceDelimeter';
 
 import logo from '../../assets/icons/GS logo.png';
 
-export const Header = () => {
+const Header = () => {
   const { totalPrice, totalCount } = useSelector(({ cart }) => ({
     totalPrice: cart.totalPrice,
     totalCount: cart.totalCount
@@ -31,7 +31,7 @@ export const Header = () => {
 
         <div className="header__cart">
           <Link to="/cart">
-            <button className="button button-cart">
+            <button className="button button-cart" type="button">
               <span>{priceDelimeter(totalPrice)} ₽</span>
               <div className="button__delimiter" />
               <FaCartArrowDown className="cart-icon" size={25} />
@@ -43,3 +43,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

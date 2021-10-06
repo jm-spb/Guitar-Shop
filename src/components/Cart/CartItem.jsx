@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { priceDelimeter } from '../../priceDelimeter';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 
-import { FaMinus } from 'react-icons/fa';
-import { FaPlus } from 'react-icons/fa';
+import priceDelimeter from '../../priceDelimeter';
 
-export const CartItem = ({
+const CartItem = ({
   id,
   name,
   imageCartURL,
@@ -39,11 +39,11 @@ export const CartItem = ({
 
         <div className="item__wrapper">
           <div className="item__count">
-            <button className="button button-outline button-circle " onClick={handleMinusItem}>
+            <button className="button button-outline button-circle " onClick={handleMinusItem} type="button">
               <FaMinus className="item__count-minus" />
             </button>
             <b>{totalItemCount}</b>
-            <button className="button button-outline button-circle " onClick={handlePlusItem}>
+            <button className="button button-outline button-circle " onClick={handlePlusItem} type="button">
               <FaPlus className="item__count-plus" />
             </button>
           </div>
@@ -52,7 +52,7 @@ export const CartItem = ({
             <b>{priceDelimeter(totalItemPrice)} ₽</b>
 
             <div className="item__remove">
-              <button className="button button-outline button-circle" onClick={handleRemoveClick}>
+              <button className="button button-outline button-circle" onClick={handleRemoveClick} type="button">
                 <FaPlus className="item__count-plus" />
               </button>
             </div>
@@ -62,3 +62,22 @@ export const CartItem = ({
     </div>
   );
 };
+
+CartItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  imageCartURL: PropTypes.string.isRequired,
+  totalItemPrice: PropTypes.number.isRequired,
+  totalItemCount: PropTypes.number.isRequired,
+  onClickRemoveItem: PropTypes.func,
+  onClickPlusItem: PropTypes.func,
+  onClickMinusItem: PropTypes.func
+};
+
+CartItem.defaultProps = {
+  onClickRemoveItem: () => {},
+  onClickPlusItem: () => {},
+  onClickMinusItem: () => {}
+};
+
+export default CartItem;

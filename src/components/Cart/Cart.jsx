@@ -4,24 +4,20 @@ import { Link } from 'react-router-dom';
 
 import './Cart.scss';
 
-import { CartItem } from './CartItem';
-import { EmptyCart } from '../EmptyCart/EmptyCart';
+import { FaCartArrowDown, FaTrashAlt, FaArrowLeft } from 'react-icons/fa';
 
-import { priceDelimeter } from '../../priceDelimeter';
+import CartItem from './CartItem';
+import EmptyCart from '../EmptyCart/EmptyCart';
+
+import priceDelimeter from '../../priceDelimeter';
 
 import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../../redux/actions/cart';
 
-import { FaCartArrowDown } from 'react-icons/fa';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaArrowLeft } from 'react-icons/fa';
-
-export const Cart = () => {
+const Cart = () => {
   const dispatch = useDispatch();
   const { totalPrice, totalCount, itemsAdded } = useSelector(({ cart }) => cart);
 
-  const groupItems = Object.keys(itemsAdded).map((key) => {
-    return itemsAdded[key].items[0];
-  });
+  const groupItems = Object.keys(itemsAdded).map((key) => itemsAdded[key].items[0]);
 
   const onClearCart = () => {
     if (window.confirm('Вы действильно хотите удалить все товары из корзины?')) dispatch(clearCart());
@@ -51,7 +47,7 @@ export const Cart = () => {
             <div className="cart__title">
               <FaCartArrowDown className="cart__icon" size={30} /> <h2>Корзина</h2>
             </div>
-            <div className="cart__clear" onClick={onClearCart}>
+            <div className="cart__clear" onClick={onClearCart} onKeyDown={onClearCart} role="button" tabIndex={0}>
               <FaTrashAlt className="cart__clear-icon" size={30} />
               <span>Очистить корзину</span>
             </div>
@@ -82,13 +78,13 @@ export const Cart = () => {
             </div>
             <div className="bottom__buttons">
               <Link to="/">
-                <button className="button button-outline button-go-back">
+                <button className="button button-outline button-go-back" type="button">
                   <FaArrowLeft className="button-go-back-icon" size={20} />
                   <span>Вернуться назад</span>
                 </button>
               </Link>
 
-              <button className="button button-pay" onClick={onClickOrder}>
+              <button className="button button-pay" onClick={onClickOrder} type="button">
                 <span>Перейти к оплате</span>
               </button>
             </div>
@@ -100,3 +96,5 @@ export const Cart = () => {
     </React.Fragment>
   );
 };
+
+export default Cart;

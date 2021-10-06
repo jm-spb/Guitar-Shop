@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { priceDelimeter } from '../../priceDelimeter';
-
 import { FaStar } from 'react-icons/fa';
+
+import priceDelimeter from '../../priceDelimeter';
 
 import './ItemCard.scss';
 
-export const ItemCard = ({
+const ItemCard = ({
   id,
   name,
   discription,
@@ -52,19 +52,19 @@ export const ItemCard = ({
       <div className="item-card__rating">
         {[ ...Array(10) ].map((_, i) => {
           const ratingValue = i + 1;
-          return <FaStar key={i + ratingValue} size={15} color={ratingValue <= rating ? '#ffc107' : ''} />;
+          return <FaStar key={ratingValue} size={15} color={ratingValue <= rating ? '#ffc107' : ''} />;
         })}
       </div>
 
       <div className="item-card__modal">
-        <button className="button button-modal" onClick={handleModalOn}>
+        <button className="button button-modal" onClick={handleModalOn} type="button">
           <span>Описание</span>
         </button>
       </div>
 
       <div className="item-card__bottom">
         <div className="item-card__price">{`${priceDelimeter(price)} ₽`}</div>
-        <button onClick={handleAddItem} className="button button-outline button-add">
+        <button onClick={handleAddItem} className="button button-outline button-add" type="button">
           <span>Добавить</span>
           {addedCount && <i>{addedCount}</i>}
         </button>
@@ -74,16 +74,21 @@ export const ItemCard = ({
 };
 
 ItemCard.propTypes = {
-  name: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  discription: PropTypes.string.isRequired,
   imageURL: PropTypes.string.isRequired,
-  price: PropTypes.number,
-  rating: PropTypes.number,
+  imageCartURL: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
+  addedCount: PropTypes.number.isRequired,
   onAddItem: PropTypes.func,
-  addedCount: PropTypes.number
+  setActive: PropTypes.func
 };
 
 ItemCard.defaultProps = {
-  name: 'Наименование товара',
-  price: 0,
-  rating: 0
+  onAddItem: () => {},
+  setActive: () => {}
 };
+
+export default ItemCard;

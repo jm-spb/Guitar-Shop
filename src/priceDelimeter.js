@@ -1,4 +1,4 @@
-export const priceDelimeter = (price) => {
+const priceDelimeter = (price) => {
   if (!price) return '';
 
   const arrOfNumbers = price.toString().split('');
@@ -9,3 +9,5 @@ export const priceDelimeter = (price) => {
   }
   return arrOfNumbers.join('').trim();
 };
+
+export default priceDelimeter;

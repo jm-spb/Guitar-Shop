@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Categories = ({ activeCategory, categoriesItems, onClickCategory }) => {
+const Categories = ({ activeCategory, categoriesItems, onClickCategory }) => {
   const categoriesList =
     categoriesItems &&
-    categoriesItems.map((obj, idx) => (
-      <li
-        key={`${obj.name}_${idx}`}
-        className={activeCategory === obj.category ? 'select-bar__categories_active' : ''}
-        onClick={() => onClickCategory(obj.category)}
-      >
-        {obj.name}
+    categoriesItems.map((obj) => (
+      <li key={`${obj.name}`} className={activeCategory === obj.category ? 'select-bar__categories_active' : ''}>
+        <button
+          onClick={() => onClickCategory(obj.category)}
+          onKeyDown={() => onClickCategory(obj.category)}
+          type="button"
+        >
+          {obj.name}
+        </button>
       </li>
     ));
 
@@ -28,6 +30,7 @@ Categories.propTypes = {
 };
 
 Categories.defaultProps = {
-  activeCategory: 'guitars',
-  categoriesItems: []
+  onClickCategory: () => {}
 };
+
+export default Categories;

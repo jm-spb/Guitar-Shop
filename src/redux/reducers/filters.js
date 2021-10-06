@@ -6,7 +6,7 @@ const initialState = {
   order: 'desc'
 };
 
-export const filters = (state = initialState, action) => {
+const filters = (state = initialState, action) => {
   switch (action.type) {
     case SET_SORT_BY:
       return {
@@ -23,3 +23,5 @@ export const filters = (state = initialState, action) => {
       return state;
   }
 };
+
+export default filters;

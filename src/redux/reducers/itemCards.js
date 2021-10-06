@@ -5,7 +5,7 @@ const initialState = {
   isLoaded: false
 };
 
-export const itemCards = (state = initialState, action) => {
+const itemCards = (state = initialState, action) => {
   switch (action.type) {
     case SET_CARDS:
       return {
@@ -21,3 +21,5 @@ export const itemCards = (state = initialState, action) => {
       return state;
   }
 };
+
+export default itemCards;

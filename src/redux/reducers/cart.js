@@ -12,7 +12,7 @@ const getTotalItemsPrice = (arr) => arr.reduce((pre, cur) => pre + cur.price, 0)
 // Общая сумма по всем товарам в корзине
 const getTotalPrice = (obj) => {
   // создаём единый массив из всех значений в itemsAdded. Его длина - количество добавленных товаров
-  const items = Object.values(obj).map((obj) => obj.items);
+  const items = Object.values(obj).map((objInArr) => objInArr.items);
   const allItemsArray = [].concat(...items);
   const totalPrice = getTotalItemsPrice(allItemsArray);
 
@@ -21,13 +21,13 @@ const getTotalPrice = (obj) => {
 
 // Общее количество товаров в корзине
 const getTotalCount = (obj) => {
-  const items = Object.values(obj).map((obj) => obj.items);
+  const items = Object.values(obj).map((objInArr) => objInArr.items);
   const allItemsArray = [].concat(...items);
 
   return allItemsArray.length;
 };
 
-export const cart = (state = initialState, action) => {
+const cart = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM_CART: {
       /* в currentItems содержится актуальное значение добавленных объектов.
@@ -119,3 +119,5 @@ export const cart = (state = initialState, action) => {
       return state;
   }
 };
+
+export default cart;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { EmptyCart } from '../components/EmptyCart/EmptyCart';
+import EmptyCart from '../components/EmptyCart/EmptyCart';
 
-export const EmptyCartPage = () => {
-  return <EmptyCart />;
-};
+const EmptyCartPage = () => <EmptyCart />;
+
+export default EmptyCartPage;
