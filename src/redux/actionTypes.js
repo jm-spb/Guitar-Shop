@@ -9,3 +9,5 @@ export const SET_CATEGORY = 'SET_CATEGORY';
 
 export const SET_CARDS = 'SET_CARDS';
 export const SET_LOADED = 'SET_LOADED';
+
+export const SET_ERROR_MSG = ' SET_ERROR_MSG';

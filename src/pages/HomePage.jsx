@@ -8,6 +8,7 @@ import SortPopUp from '../components/SortPopUp';
 import Categories from '../components/Categories';
 import Loader from '../components/ItemCard/Loader';
 import Modal from '../components/Modal';
+import ErrorMsg from '../components/ErrorMsg';
 
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { addItemToCart } from '../redux/actions/cart';
@@ -26,7 +27,7 @@ const HomePage = () => {
 
   const dispatch = useDispatch();
 
-  const { items, isLoaded } = useSelector(({ itemCards }) => itemCards);
+  const { items, isLoaded, isError } = useSelector(({ itemCards }) => itemCards);
   const { category, sortBy, order } = useSelector(({ filters }) => filters);
   const { itemsAdded } = useSelector(({ cart }) => cart);
 
@@ -100,9 +101,13 @@ const HomePage = () => {
       <main className="index-page__main main">
         <h2>Все товары</h2>
 
-        <div className="main__content">
-          {isLoaded ? cardsList : Array(8).fill(0).map(() => <Loader key={Math.random()} />)}
-        </div>
+        {isError ? (
+          <ErrorMsg />
+        ) : (
+          <div className="main__content">
+            {isLoaded ? cardsList : Array(8).fill(0).map(() => <Loader key={Math.random()} />)}
+          </div>
+        )}
 
         <Modal
           scrollY={modalActive.scrollY}

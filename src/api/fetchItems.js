@@ -1,12 +1,15 @@
 import axios from 'axios';
 
-import { setLoaded, setItemCards } from '../redux/actions/itemCards';
+import { setLoaded, setItemCards, setErrorMsg } from '../redux/actions/itemCards';
 
 const fetchItems = (category, sortBy, order) => (dispatch) => {
-  dispatch(setLoaded(false));
-  axios.get(`/${category}?_sort=${sortBy}&_order=${order}`).then(({ data }) => {
-    dispatch(setItemCards(data));
-  });
+  axios
+    .get(`/${category}?_sort=${sortBy}&_order=${order}`)
+    .finally(dispatch(setLoaded(false)))
+    .then(({ data }) => {
+      dispatch(setItemCards(data));
+    })
+    .catch(() => dispatch(setErrorMsg(true)));
 };
 
 export default fetchItems;

@@ -1,0 +1,12 @@
+@import '../../config';
+
+.error {
+  width: 70%;
+  margin: 50px auto;
+
+  h2 {
+    color: $red-color;
+    line-height: 2;
+    text-align: center;
+  }
+}

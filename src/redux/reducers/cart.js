@@ -30,13 +30,6 @@ const getTotalCount = (obj) => {
 const cart = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM_CART: {
-      /* в currentItems содержится актуальное значение добавленных объектов.
-      1) проверь объект itemsAdded по ключу action.payload.id.
-      2) если такого ключа нет, то запиши в массив currentItems объект из action.payload. 
-      3) если такой ключ есть, скопируй все существующие объекты из массива items и добавь новый объект из action.payload
-      4) Массив currentItems будет в качестве ключа передан в items
-      */
-
       const currentItems = !state.itemsAdded[action.payload.id]
         ? [ action.payload ]
         : [ ...state.itemsAdded[action.payload.id].items, action.payload ];

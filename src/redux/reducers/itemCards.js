@@ -1,8 +1,9 @@
-import { SET_CARDS, SET_LOADED } from '../actionTypes';
+import { SET_CARDS, SET_LOADED, SET_ERROR_MSG } from '../actionTypes';
 
 const initialState = {
   items: [],
-  isLoaded: false
+  isLoaded: false,
+  isError: false
 };
 
 const itemCards = (state = initialState, action) => {
@@ -11,11 +12,15 @@ const itemCards = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        isLoaded: true
+        isLoaded: true,
+        isError: false
       };
 
     case SET_LOADED:
       return { ...state, isLoaded: action.payload };
+
+    case SET_ERROR_MSG:
+      return { ...state, isLoaded: true, isError: action.payload };
 
     default:
       return state;

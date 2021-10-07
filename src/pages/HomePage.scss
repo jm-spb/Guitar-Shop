@@ -10,7 +10,6 @@
 
       li {
         background-color: #f9f9f9;
-        padding: 13px 30px;
         border-radius: 30px;
         margin: 10px 10px 10px 0;
         font-weight: bold;
@@ -19,6 +18,10 @@
 
         &:hover {
           background-color: darken(#f9f9f9, 2%);
+        }
+
+        button {
+          padding: 13px 30px;
         }
       }
     }
@@ -74,10 +77,11 @@
         overflow: hidden;
 
         li {
-          padding: 12px 20px;
           cursor: pointer;
 
           button {
+            width: 100%;
+            padding: 12px 20px;
             text-align: start;
           }
 
