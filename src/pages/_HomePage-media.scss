@@ -15,14 +15,5 @@
 @media (max-width: 380px) {
   .select-bar {
     font-size: 12px;
-    &__categories {
-      ul {
-        li {
-          button {
-            padding: 10px 20px;
-          }
-        }
-      }
-    }
   }
 }
