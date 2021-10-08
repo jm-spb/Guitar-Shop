@@ -38,6 +38,8 @@
   }
 
   .sort {
+    display: inline-flex;
+
     &__label {
       display: flex;
       align-items: center;

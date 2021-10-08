@@ -3,7 +3,9 @@
     &__categories {
       ul {
         li {
-          padding: 10px 15px;
+          button {
+            padding: 10px 15px;
+          }
         }
       }
     }
@@ -16,7 +18,9 @@
     &__categories {
       ul {
         li {
-          padding: 10px 20px;
+          button {
+            padding: 10px 20px;
+          }
         }
       }
     }

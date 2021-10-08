@@ -36,6 +36,7 @@ const Cart = () => {
   };
 
   const onClickOrder = () => {
+    dispatch(clearCart());
     alert('Оплата прошла успешно!');
   };
 
