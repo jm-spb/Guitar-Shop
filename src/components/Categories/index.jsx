@@ -5,7 +5,10 @@ const Categories = ({ activeCategory, categoriesItems, onClickCategory }) => {
   const categoriesList =
     categoriesItems &&
     categoriesItems.map((obj) => (
-      <li key={`${obj.name}`} className={activeCategory === obj.category ? 'select-bar__categories_active' : ''}>
+      <li
+        key={`${obj.name}`}
+        className={activeCategory === obj.category ? 'select-bar__categories_active' : ''}
+      >
         <button
           onClick={() => onClickCategory(obj.category)}
           onKeyDown={() => onClickCategory(obj.category)}
@@ -25,12 +28,12 @@ const Categories = ({ activeCategory, categoriesItems, onClickCategory }) => {
 
 Categories.propTypes = {
   activeCategory: PropTypes.string.isRequired,
-  categoriesItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onClickCategory: PropTypes.func
+  categoriesItems: PropTypes.instanceOf(Array).isRequired,
+  onClickCategory: PropTypes.func,
 };
 
 Categories.defaultProps = {
-  onClickCategory: () => {}
+  onClickCategory: () => {},
 };
 
 export default Categories;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FaCaretUp } from 'react-icons/fa';
 
 const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
-  const [ visiblePopup, setVisiblePopup ] = useState(false);
+  const [visiblePopup, setVisiblePopup] = useState(false);
 
   const sortRef = useRef();
 
@@ -29,7 +29,11 @@ const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
     sortPopupItems.map((obj) => (
       <li
         key={`${obj.type}_${obj.order}`}
-        className={activeSortType.sortBy === obj.type && activeSortType.order === obj.order ? 'sort__popup_active' : ''}
+        className={
+          activeSortType.sortBy === obj.type && activeSortType.order === obj.order
+            ? 'sort__popup_active'
+            : ''
+        }
       >
         <button
           onClick={() => onSelectItem(obj.type, obj.order)}
@@ -53,7 +57,12 @@ const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
   return (
     <div ref={sortRef} className="select-bar__sort sort">
       <div className="sort__label">
-        <FaCaretUp className={visiblePopup ? 'sort__caret-up sort__caret-up_rotated' : 'sort__caret-up'} size={15} />
+        <FaCaretUp
+          className={
+            visiblePopup ? 'sort__caret-up sort__caret-up_rotated' : 'sort__caret-up'
+          }
+          size={15}
+        />
         <b>Сортировка&nbsp;по:</b>
         <span onClick={togglePopup} onKeyDown={togglePopup} role="button" tabIndex={0}>
           {activeLabel}
@@ -69,13 +78,13 @@ const SortPopUp = ({ sortPopupItems, activeSortType, onClickSortType }) => {
 };
 
 SortPopUp.propTypes = {
-  sortPopupItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sortPopupItems: PropTypes.instanceOf(Array).isRequired,
   activeSortType: PropTypes.objectOf(PropTypes.string).isRequired,
-  onClickSortType: PropTypes.func
+  onClickSortType: PropTypes.func,
 };
 
 SortPopUp.defaultProps = {
-  onClickSortType: () => {}
+  onClickSortType: () => {},
 };
 
 export default SortPopUp;
